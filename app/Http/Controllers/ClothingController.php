@@ -14,7 +14,10 @@ class ClothingController extends Controller
      */
     public function index() {
         $clothings = Cloting::latest()->paginate(10);
-        return view('admin.index', compact('clothings'));
+        return view('admin.index', [
+            'clothings' => $clothings,
+            'title' => 'Data Clothing - XII SIJA 1 ',
+        ]);
     }
 
         /**
@@ -24,7 +27,9 @@ class ClothingController extends Controller
     */
     public function create()
     {
-        return view('admin.create');
+        return view('admin.create', [
+            'title' => 'Buat Data Clothing - XII SIJA 1',
+        ]);
     }
 
 
@@ -73,7 +78,10 @@ class ClothingController extends Controller
 */
 public function edit(Cloting $clothing)
 {
-    return view('admin.edit', compact('clothing'));
+    return view('admin.edit', [
+        'clothing' => $clothing,
+        'title' => 'Edit Data Clothing - XII SIJA 1',
+    ]);
 }
 
 
