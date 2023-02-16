@@ -13,7 +13,7 @@
                                 <th scope="col">KELAS</th>
                                 <th scope="col">GAMBAR</th>
                                 <th scope="col">JUDUL</th>
-                                <th scope="col">Diterbit</th>
+                                <th scope="col">DITERBIT</th>
                                 <th scope="col">CONTENT</th>
                                 <th scope="col">AKSI</th>
                               </tr>
