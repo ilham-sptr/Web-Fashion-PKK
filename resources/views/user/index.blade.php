@@ -22,7 +22,7 @@
     />
     <!-- ====== Custom CSS ====== -->
     <link rel="stylesheet" href="/css/styles.css" />
-    <title>Fashion Shop</title>
+    <title>{{$title}}</title>
   </head>
   <body>
     <!-- ====== Header ====== -->
@@ -126,7 +126,7 @@
         <div class="row container">
           <div class="col">
             <div class="top">
-                
+
               <img src="/img/blog-1.png" alt="" />
             </div>
             <div class="bottom">

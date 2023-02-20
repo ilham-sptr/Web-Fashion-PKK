@@ -1,7 +1,8 @@
 <?php
 
-use App\Http\Controllers\ClothingController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AppController;
+use App\Http\Controllers\ClothingController;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,6 +22,4 @@ use Illuminate\Support\Facades\Route;
 Route::resource('/admin/clothing', ClothingController::class);
 
 // user
-Route::get('/', function () {
-    return view('user.index');
-});
+Route::get('/', [AppController::class, 'index']);

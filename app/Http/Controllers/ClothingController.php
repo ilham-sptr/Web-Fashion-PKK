@@ -13,7 +13,7 @@ class ClothingController extends Controller
      * index
      */
     public function index() {
-        $clothings = Cloting::latest()->paginate(10);
+        $clothings = Cloting::all();
         return view('admin.index', [
             'clothings' => $clothings,
             'title' => 'Data Clothing - XII SIJA 1 ',
