@@ -34,6 +34,19 @@ class ClothingController extends Controller
 
 
     /**
+     * show
+     * 
+     * 
+     */
+
+    public function show(Cloting $clothing) {
+        return view('cloting', [
+            'title' => 'Single Cloting',
+            'clothing' => $clothing,
+        ]);
+    }
+
+    /**
     * store
     *
     * @param  mixed $request

@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('nama');
             $table->string('kelas');
+            $table->string('slug')->unique();
             $table->string('image');
             $table->string('title');
             $table->string('content');

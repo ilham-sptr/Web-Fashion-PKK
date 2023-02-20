@@ -27,11 +27,11 @@
                                         <img src="{{ Storage::url('public/cloth/').$cloth->image }}" class="rounded" style="width: 150px">
                                     </td>
                                     <td>{{ $cloth->title }}</td>
-                                    <td>{{ $cloth->created_at }}</td>
+                                    <td>{{ $cloth->updated_at }}</td>
                                     <td>{!! $cloth->content !!}</td>
                                     <td style="width: 100px;">
-                                        <form onsubmit="return confirm('Apakah Anda Yakin ?');" action="{{ route('clothing.destroy', $cloth->id) }}" method="POST">
-                                            <a href="{{ route('clothing.edit', $cloth->id) }}" class="btn btn-sm btn-primary"><i class='bx bxs-pencil'></i></a>
+                                        <form onsubmit="return confirm('Apakah Anda Yakin ?');" action="{{ route('clothing.destroy', $cloth->slug) }}" method="POST">
+                                            <a href="{{ route('clothing.edit', $cloth->slug) }}" class="btn btn-sm btn-primary"><i class='bx bxs-pencil'></i></a>
                                             @csrf
                                             @method('DELETE')
                                             <button type="submit" class="btn btn-sm btn-danger"><i class='bx bx-trash-alt'></i></button>
