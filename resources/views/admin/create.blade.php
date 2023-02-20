@@ -59,6 +59,11 @@
                         </div>
 
                         <div class="form-group">
+                            <label class="font-weight-bold">SLUG</label>
+                            <input type="text" class="form-control @error('slug') is-invalid @enderror" name="slug" value="{{ old('slug') }}">
+                        </div>
+
+                        <div class="form-group">
                             <label class="font-weight-bold">HARGA</label>
                             <input type="text" class="form-control @error('harga') is-invalid @enderror" name="harga" value="{{ old('harga') }}" placeholder="Masukkan Harga Clothing Anda">
                         

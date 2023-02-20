@@ -22,7 +22,7 @@
     />
     <!-- ====== Custom CSS ====== -->
     <link rel="stylesheet" href="/css/styles.css" />
-    <title>{{$title}}</title>
+    <title>Fashion Shop</title>
   </head>
   <body>
     <!-- ====== Header ====== -->
@@ -79,12 +79,12 @@
       </div>
     </header>
     <!-- ====== Collection ====== -->
-    <section class="section collection blog">
+    <section class="section collection">
       <div class="title">
         <span>COLLECTION</span>
         <h2>Our Top Collection</h2>
       </div>
-      {{-- <div class="filters d-flex">
+      <div class="filters d-flex">
         <div data-filter="Jewellery">Jewellery</div>
         <div data-filter="Accessories">Accessories</div>
         <div data-filter="Dresses">Dresses</div>
@@ -122,36 +122,21 @@
         <div class="pagination">
           <div class="custom-pagination"></div>
         </div>
-      </div> --}}
+      </div>
+    </section>
+
+      <!-- ====== Blogs ====== -->
+    <section class="section blog">
+        <div class="title">
+          <span>NEW ARRIVAL</span>
+          <h2>Latest Collection</h2>
+        </div>
+            
         <div class="row container">
           <div class="col">
             @forelse ($clothings as $cloth)
             <div class="top">
-                {{-- @forelse ($clothings as $cloth)
-                                <tr>
-                                    <td>{{ $cloth->nama }}</td>
-                                    <td>{{ $cloth->kelas }}</td>
-                                    <td class="text-center">
-                                        <img src="{{ Storage::url('public/cloth/').$cloth->image }}" class="rounded" style="width: 150px">
-                                    </td>
-                                    <td>{{ $cloth->title }}</td>
-                                    <td>{{ $cloth->updated_at }}</td>
-                                    <td>{!! $cloth->content !!}</td>
-                                    <td style="width: 100px;">
-                                        <form onsubmit="return confirm('Apakah Anda Yakin ?');" action="{{ route('clothing.destroy', $cloth->slug) }}" method="POST">
-                                            <a href="{{ route('clothing.edit', $cloth->slug) }}" class="btn btn-sm btn-primary"><i class='bx bxs-pencil'></i></a>
-                                            @csrf
-                                            @method('DELETE')
-                                            <button type="submit" class="btn btn-sm btn-danger"><i class='bx bx-trash-alt'></i></button>
-                                        </form>
-                                    </td>
-                                </tr>
-                                @empty
-                                <div class="alert alert-danger">
-                                    Data Clothing belum Tersedia.
-                                </div>
-                @endforelse --}}
-              <img src="{{ Storage::url('public/cloth/').$cloth->image }}"/>
+              <img src="{{ Storage::url('public/cloth/').$cloth->image }}" />
             </div>
             <div class="bottom">
               <h3>{{$cloth->title}}</h3>
@@ -161,65 +146,13 @@
               <span>{{$cloth->harga}}</span>
             </div>
           </div>
-          <div class="col">
-            <div class="top">
-              <img src="/img/blog-2.png" alt="" />
-            </div>
-            <div class="bottom">
-              <h3>Trendy</h3>
-              <h4>
-                Lorem Ispum is a placeholder text commomly used as a free text.
-              </h4>
-              <span>10 January 2021</span>
-            </div>
-          </div>
-          <div class="col">
-            <div class="top">
-              <img src="/img/blog-3.png" alt="" />
-            </div>
-            <div class="bottom">
-              <h3>Trendy</h3>
-              <h4>
-                Lorem Ispum is a placeholder text commomly used as a free text.
-              </h4>
-              <span>10 January 2021</span>
-            </div>
-          </div>
         </div>
-    </section>
-
-    <!-- ====== New Arrival ====== -->
-    <section class="section new-arrival">
-      <div class="title">
-        <span>NEW ARRIVAL</span>
-        <h2>Latest Collection</h2>
-      </div>
-
-      <div class="row container">
-        <div class="col col-1">
-          <img src="/img/poster-1.png" alt="" />
-          <h3>
-            2021 Trends <br />
-            Women’s Smart Skirt
-          </h3>
-        </div>
-        <div class="col col-2">
-          <img src="/img/poster-2.png" alt="" />
-          <h3>
-            2021 Trends <br />
-            Women’s Smart Skirt
-          </h3>
-        </div>
-        <div class="col col-3">
-          <img src="/img/poster-3.png" alt="" />
-          <h3>
-            2021 Trends <br />
-            Women’s Smart Shirt <br />
-            <span>Discover More:</span>
-          </h3>
-        </div>
-      </div>
-    </section>
+        @empty
+            <div class="alert alert-danger">
+                Data Clothing belum Tersedia.
+            </div>
+        @endforelse
+      </section>
 
     <!-- ====== Categories ====== -->
     <section class="section categories">
@@ -299,55 +232,8 @@
       </div>
     </section>
 
-    <!-- ====== Blogs ====== -->
-    <section class="section blog">
-      <div class="title">
-        <span>BLOGS</span>
-        <h2>Latest News</h2>
-      </div>
-
-      <div class="row container">
-        <div class="col">
-          <div class="top">
-            <img src="/img/blog-1.png" alt="" />
-          </div>
-          <div class="bottom">
-            <h3>Trendy</h3>
-            <h4>
-              Lorem Ispum is a placeholder text commomly used as a free text.
-            </h4>
-            <span>10 January 2021</span>
-          </div>
-        </div>
-        <div class="col">
-          <div class="top">
-            <img src="/img/blog-2.png" alt="" />
-          </div>
-          <div class="bottom">
-            <h3>Trendy</h3>
-            <h4>
-              Lorem Ispum is a placeholder text commomly used as a free text.
-            </h4>
-            <span>10 January 2021</span>
-          </div>
-        </div>
-        <div class="col">
-          <div class="top">
-            <img src="/img/blog-3.png" alt="" />
-          </div>
-          <div class="bottom">
-            <h3>Trendy</h3>
-            <h4>
-              Lorem Ispum is a placeholder text commomly used as a free text.
-            </h4>
-            <span>10 January 2021</span>
-          </div>
-        </div>
-      </div>
-    </section>
-
     <!-- ====== Footer ====== -->
-    <footer class="footer">
+    <footer class="footer" style="font-size: 15px;">
       <div class="row container">
         <div class="col">
           <div class="logo d-flex">
@@ -366,8 +252,8 @@
             <div class="icon d-flex"><i class="bx bxl-youtube"></i></div>
           </div>
           <p class="color">
-            Copyrights 2021 <br />
-            @Iamabdulqadeer01
+            Copyrights 2023 <br />
+            @sijasmkn69jkt
           </p>
         </div>
         <div class="col">
@@ -400,15 +286,15 @@
             <h4>Contact Us</h4>
             <div class="d-flex">
               <div class="icon"><i class="bx bxs-map"></i></div>
-              <span>123 Street Trafford, London, UK</span>
+              <span style="font-size: 15px;">Jl. Swadaya, RT.7/RW.7, Jatinegara, Kec. Cakung, Kota Jakarta Timur, Daerah Khusus Ibukota Jakarta 13930</span>
             </div>
             <div class="d-flex">
               <div class="icon"><i class="bx bxs-envelope"></i></div>
-              <span>info@sitename.com</span>
+              <span style="font-size: 15px;">ilham.26cand@gmail.com</span>
             </div>
             <div class="d-flex">
               <div class="icon"><i class="bx bxs-phone"></i></div>
-              <span>+456 789 789 001</span>
+              <span style="font-size: 15px;">+6281299010725</span>
             </div>
           </div>
         </div>

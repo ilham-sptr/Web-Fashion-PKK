@@ -59,6 +59,8 @@ class ClothingController extends Controller
             'kelas'     => 'required',
             'image'     => 'required|image|mimes:png,jpg,jpeg',
             'title'     => 'required',
+            'slug'      => 'required',
+            'harga'     => 'required',
             'content'   => 'required'
         ]);
 
@@ -71,6 +73,8 @@ class ClothingController extends Controller
             'nama'      => $request->nama,
             'kelas'     => $request->kelas,
             'title'     => $request->title,
+            'slug'      => $request->slug,
+            'harga'     => $request->harga,
             'content'   => $request->content
         ]);
 
@@ -111,6 +115,7 @@ public function update(Request $request, Cloting $clothing)
         'nama'      => 'required',
         'kelas'     => 'required',
         'title'     => 'required',
+        'harga'     => 'required',
         'content'   => 'required'
     ]);
 
@@ -123,6 +128,7 @@ public function update(Request $request, Cloting $clothing)
             'nama'      => $request->nama,
             'kelas'     => $request->kelas,
             'title'     => $request->title,
+            'harga'     => $request->harga,
             'content'   => $request->content
         ]);
 
@@ -140,6 +146,8 @@ public function update(Request $request, Cloting $clothing)
             'nama'      => $request->nama,
             'kelas'     => $request->kelas,
             'title'     => $request->title,
+            'slug'      => $request->slug,
+            'harga'     => $request->harga,
             'content'   => $request->content
         ]);
 

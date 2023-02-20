@@ -13,6 +13,7 @@
                                 <th scope="col">KELAS</th>
                                 <th scope="col">GAMBAR</th>
                                 <th scope="col">JUDUL</th>
+                                <th scope="col">HARGA</th>
                                 <th scope="col">DITERBIT</th>
                                 <th scope="col">CONTENT</th>
                                 <th scope="col">AKSI</th>
@@ -27,11 +28,12 @@
                                         <img src="{{ Storage::url('public/cloth/').$cloth->image }}" class="rounded" style="width: 150px">
                                     </td>
                                     <td>{{ $cloth->title }}</td>
+                                    <td>{{ $cloth->harga }}</td>
                                     <td>{{ $cloth->updated_at }}</td>
                                     <td>{!! $cloth->content !!}</td>
                                     <td style="width: 100px;">
-                                        <form onsubmit="return confirm('Apakah Anda Yakin ?');" action="{{ route('clothing.destroy', $cloth->slug) }}" method="POST">
-                                            <a href="{{ route('clothing.edit', $cloth->slug) }}" class="btn btn-sm btn-primary"><i class='bx bxs-pencil'></i></a>
+                                        <form onsubmit="return confirm('Apakah Anda Yakin ?');" action="{{ route('clothing.destroy', $cloth->id) }}" method="POST">
+                                            <a href="{{ route('clothing.edit', $cloth->id) }}" class="btn btn-sm btn-primary"><i class='bx bxs-pencil'></i></a>
                                             @csrf
                                             @method('DELETE')
                                             <button type="submit" class="btn btn-sm btn-danger"><i class='bx bx-trash-alt'></i></button>
@@ -45,7 +47,6 @@
                               @endforelse
                             </tbody>
                           </table>  
-                          {{ $clothings->links() }}
                     </div>
                 </div>
             </div>
