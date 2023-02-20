@@ -125,16 +125,40 @@
       </div> --}}
         <div class="row container">
           <div class="col">
+            @forelse ($clothings as $cloth)
             <div class="top">
-
-              <img src="/img/blog-1.png" alt="" />
+                {{-- @forelse ($clothings as $cloth)
+                                <tr>
+                                    <td>{{ $cloth->nama }}</td>
+                                    <td>{{ $cloth->kelas }}</td>
+                                    <td class="text-center">
+                                        <img src="{{ Storage::url('public/cloth/').$cloth->image }}" class="rounded" style="width: 150px">
+                                    </td>
+                                    <td>{{ $cloth->title }}</td>
+                                    <td>{{ $cloth->updated_at }}</td>
+                                    <td>{!! $cloth->content !!}</td>
+                                    <td style="width: 100px;">
+                                        <form onsubmit="return confirm('Apakah Anda Yakin ?');" action="{{ route('clothing.destroy', $cloth->slug) }}" method="POST">
+                                            <a href="{{ route('clothing.edit', $cloth->slug) }}" class="btn btn-sm btn-primary"><i class='bx bxs-pencil'></i></a>
+                                            @csrf
+                                            @method('DELETE')
+                                            <button type="submit" class="btn btn-sm btn-danger"><i class='bx bx-trash-alt'></i></button>
+                                        </form>
+                                    </td>
+                                </tr>
+                                @empty
+                                <div class="alert alert-danger">
+                                    Data Clothing belum Tersedia.
+                                </div>
+                @endforelse --}}
+              <img src="{{ Storage::url('public/cloth/').$cloth->image }}"/>
             </div>
             <div class="bottom">
-              <h3>Trendy</h3>
+              <h3>{{$cloth->title}}</h3>
               <h4>
-                Lorem Ispum is a placeholder text commomly used as a free text.
+                {!! $cloth->content !!}
               </h4>
-              <span>10 January 2021</span>
+              <span>{{$cloth->harga}}</span>
             </div>
           </div>
           <div class="col">

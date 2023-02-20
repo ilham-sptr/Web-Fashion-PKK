@@ -19,6 +19,7 @@ return new class extends Migration
             $table->string('image');
             $table->string('title');
             $table->string('content');
+            $table->integer('harga');
             $table->timestamps();
         });
     }

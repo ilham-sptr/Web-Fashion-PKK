@@ -14,7 +14,7 @@
                             <label class="font-weight-bold">NAMA</label>
                             <input type="text" class="form-control @error('nama') is-invalid @enderror" name="nama" value="{{ old('nama', $clothing->nama) }}" placeholder="Masukkan Nama Anda">
                         
-                            <!-- error message untuk title -->
+                            <!-- error message untuk nama -->
                             @error('nama')
                                 <div class="alert alert-danger mt-2">
                                     {{ $message }}
@@ -26,7 +26,7 @@
                             <label class="font-weight-bold">KELAS</label>
                             <input type="text" class="form-control @error('kelas') is-invalid @enderror" name="kelas" value="{{ old('kelas', $clothing->kelas) }}" placeholder="Masukkan Kelas Anda">
                         
-                            <!-- error message untuk title -->
+                            <!-- error message untuk kelas -->
                             @error('kelas')
                                 <div class="alert alert-danger mt-2">
                                     {{ $message }}
@@ -43,7 +43,7 @@
                             <label class="font-weight-bold">JUDUL</label>
                             <input type="text" class="form-control @error('title') is-invalid @enderror" name="title" value="{{ old('title', $clothing->title) }}" placeholder="Masukkan Judul Clothing Anda">
                         
-                            <!-- error message untuk title -->
+                            <!-- error message untuk judul -->
                             @error('title')
                                 <div class="alert alert-danger mt-2">
                                     {{ $message }}

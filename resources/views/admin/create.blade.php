@@ -14,7 +14,7 @@
                             <label class="font-weight-bold">NAMA</label>
                             <input type="text" class="form-control @error('nama') is-invalid @enderror" name="nama" value="{{ old('nama') }}" placeholder="Masukkan Nama Anda">
                         
-                            <!-- error message untuk title -->
+                            <!-- error message untuk nama -->
                             @error('nama')
                                 <div class="alert alert-danger mt-2">
                                     {{ $message }}
@@ -26,7 +26,7 @@
                             <label class="font-weight-bold">KELAS</label>
                             <input type="text" class="form-control @error('kelas') is-invalid @enderror" name="kelas" value="{{ old('kelas') }}" placeholder="Masukkan Kelas Anda">
                         
-                            <!-- error message untuk title -->
+                            <!-- error message untuk kelas -->
                             @error('kelas')
                                 <div class="alert alert-danger mt-2">
                                     {{ $message }}
@@ -38,7 +38,7 @@
                             <label class="font-weight-bold">GAMBAR</label>
                             <input type="file" class="form-control @error('image') is-invalid @enderror" name="image">
                         
-                            <!-- error message untuk title -->
+                            <!-- error message untuk gambar -->
                             @error('image')
                                 <div class="alert alert-danger mt-2">
                                     {{ $message }}
@@ -50,8 +50,20 @@
                             <label class="font-weight-bold">JUDUL</label>
                             <input type="text" class="form-control @error('title') is-invalid @enderror" name="title" value="{{ old('title') }}" placeholder="Masukkan Judul Clothing Anda">
                         
-                            <!-- error message untuk title -->
+                            <!-- error message untuk judul -->
                             @error('title')
+                                <div class="alert alert-danger mt-2">
+                                    {{ $message }}
+                                </div>
+                            @enderror
+                        </div>
+
+                        <div class="form-group">
+                            <label class="font-weight-bold">HARGA</label>
+                            <input type="text" class="form-control @error('harga') is-invalid @enderror" name="harga" value="{{ old('harga') }}" placeholder="Masukkan Harga Clothing Anda">
+                        
+                            <!-- error message untuk harga -->
+                            @error('harga')
                                 <div class="alert alert-danger mt-2">
                                     {{ $message }}
                                 </div>
