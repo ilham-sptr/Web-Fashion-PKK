@@ -35,11 +35,6 @@
           </div>
 
           <div class="nav-list d-flex">
-            <a href="">Home</a>
-            <a href="">Shop</a>
-            <a href="">Pages</a>
-            <a href="">About Us</a>
-            <a href="">Lookups</a>
             <div class="close">
               <i class="bx bx-x"></i>
             </div>
@@ -47,7 +42,6 @@
           </div>
 
           <div class="icons d-flex">
-            <div class="icon d-flex"><i class="bx bx-search"></i></div>
             <div class="icon user-icon d-flex">
               <i class="bx bx-user"></i>
             </div>
@@ -312,40 +306,23 @@
           <div class="form-box">
             <div class="top">
               <p>
-                Not a member?
-                <span data-id="#ff0066">Register now</span>
+                Belum punya akun?
+                <span data-id="#ff0066">Daftar Sekarang</span>
               </p>
             </div>
             <form action="">
               <div class="form-control">
-                <h2>Hello Again!</h2>
-                <p>Welcome back you've been missed.</p>
-                <input type="text" placeholder="Enter Username" />
+                <h2>Hello!</h2>
+                <p>Selamat datang kembali.</p>
+                <input type="text" placeholder="Masukkan Username Anda" />
                 <div>
-                  <input type="password" placeholder="Password" />
+                  <input type="password" placeholder="Masukkan Password Anda" />
                   <div class="icon form-icon">
                     <!-- <img src="/img/eye.svg" alt="" /> -->
                   </div>
                 </div>
-                <span>Recovery Password</span>
+                <span>Kata Sandi Pemulihan</span>
                 <input type="Submit" value="Login" />
-              </div>
-              <div class="form-control">
-                <p>Or continue with</p>
-                <div class="icons">
-                  <div class="icon">
-                    <img src="/img/search.svg" alt="" />
-                  </div>
-                  <div class="icon">
-                    <img src="/img/apple.svg" alt="" />
-                  </div>
-                  <div class="icon">
-                    <img src="/img/facebook.svg" alt="" />
-                  </div>
-                  <div class="icon">
-                    <img src="/img/github.svg" alt="" />
-                  </div>
-                </div>
               </div>
             </form>
           </div>
@@ -356,45 +333,28 @@
           <div class="form-box">
             <div class="top">
               <p>
-                Already a member?
-                <span data-id="#1a1aff">Login now</span>
+                Sudah memiliki akun?
+                <span data-id="#1a1aff">Login Sekarang</span>
               </p>
             </div>
             <form action="">
               <div class="form-control">
-                <h2>Welcome Codevo!</h2>
-                <p>It's good to have you.</p>
-                <input type="email" placeholder="Enter Email" />
+                <h2>Selamat Datang di Fashion Shop!</h2>
+                <p>Senang memilikimu.</p>
+                <input type="email" placeholder="Masukkan Email Anda" />
                 <div>
-                  <input type="password" placeholder="Password" />
+                  <input type="password" placeholder="Masukkan Password Anda" />
                   <div class="icon form-icon">
                     <img src="/img/eye.svg" alt="" />
                   </div>
                 </div>
                 <div>
-                  <input type="password" placeholder="Confirm Password" />
+                  <input type="password" placeholder="Masukkan Konfirmasi Password Anda" />
                   <div class="icon form-icon">
                     <img src="/img/eye.svg" alt="" />
                   </div>
                 </div>
-                <input type="Submit" value="Register" />
-              </div>
-              <div class="form-control">
-                <p>Or continue with</p>
-                <div class="icons">
-                  <div class="icon">
-                    <img src="/img/search.svg" alt="" />
-                  </div>
-                  <div class="icon">
-                    <img src="/img/apple.svg" alt="" />
-                  </div>
-                  <div class="icon">
-                    <img src="/img/facebook.svg" alt="" />
-                  </div>
-                  <div class="icon">
-                    <img src="/img/github.svg" alt="" />
-                  </div>
-                </div>
+                <input type="submit" value="Daftar" />
               </div>
             </form>
           </div>
