@@ -20,6 +20,7 @@ use App\Http\Controllers\ClothingController;
 // });
 
 Route::resource('/admin/clothing', ClothingController::class);
+// <!-- Route::get('/admin/clothing/{id}/{slug}', [ClothingController::class, 'edit'])->name('clothing.edit'); -->
 
 // user
 Route::get('/', [AppController::class, 'index']);

@@ -165,7 +165,9 @@
             <i class="bx bxs-user"></i>
           </div>
           <h3>24/7 Dukungan Pelanggan</h3>
-          <p>Lorem Ispum is a placeholder text commomly used as a free text.</p>
+          <p>Memberikan layanan yang cepat dan responsif kepada pelanggan yang memerlukan bantuan atau memiliki pertanyaan tentang produk atau layanan yang ditawarkan.
+
+          </p>
         </div>
       </div>
     </section>

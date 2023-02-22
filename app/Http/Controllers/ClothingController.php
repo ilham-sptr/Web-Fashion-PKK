@@ -109,7 +109,7 @@ public function edit(Cloting $clothing)
 * @param  mixed $blog
 * @return void
 */
-public function update(Request $request, Cloting $clothing)
+public function update(Request $request, Cloting $clothing, $slug)
 {
     $this->validate($request, [
         'nama'      => 'required',
