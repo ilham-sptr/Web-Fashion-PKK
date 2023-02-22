@@ -62,73 +62,26 @@
       <div class="hero">
         <div class="row container d-flex">
           <div class="col">
-            <span class="subtitle">Limited Time Only For Winter</span>
+            <span class="subtitle">Waktu Terbatas Hanya Untuk Musim Terbaik Anda</span>
             <h1>fash<span class="i">i</span>on</h1>
-            <p>LOOK YOUR BEST ON YOUR BEST DAY</p>
+            <p>TERLIHAT TERBAIK DI HARI TERBAIK ANDA</p>
 
-            <button class="btn">Explore Now!</button>
           </div>
           <img src="/img/woman-in-cart.png" alt="" />
         </div>
       </div>
     </header>
-    <!-- ====== Collection ====== -->
-    <section class="section collection">
-      <div class="title">
-        <span>COLLECTION</span>
-        <h2>Our Top Collection</h2>
-      </div>
-      <div class="filters d-flex">
-        <div data-filter="Jewellery">Jewellery</div>
-        <div data-filter="Accessories">Accessories</div>
-        <div data-filter="Dresses">Dresses</div>
-        <div data-filter="Footwear">Footwear</div>
-      </div>
 
-      <div class="products container">
-        <div class="swiper mySwiper">
-          <div class="swiper-wrapper" id="products">
-            <div class="swiper-slide">
-              <!-- <div class="product">
-                <div class="top d-flex">
-                  <img src="/img/product-1.png" alt="" />
-                  <div class="icon d-flex">
-                    <i class="bx bxs-heart"></i>
-                  </div>
-                </div>
-                <div class="bottom">
-                  <h4>Nike Air Men’s Hoodie - Imported Hoodie Red</h4>
-                  <div class="d-flex">
-                    <div class="price">$150</div>
-                    <div class="rating">
-                      <i class="bx bxs-star"></i>
-                      <i class="bx bxs-star"></i>
-                      <i class="bx bxs-star"></i>
-                      <i class="bx bxs-star"></i>
-                      <i class="bx bxs-star"></i>
-                    </div>
-                  </div>
-                </div>
-              </div> -->
-            </div>
-          </div>
-        </div>
-        <div class="pagination">
-          <div class="custom-pagination"></div>
-        </div>
-      </div>
-    </section>
-
-      <!-- ====== Blogs ====== -->
+      <!-- ====== Blog ====== -->
+      {{-- @foreach ($clothings as $cloth)
     <section class="section blog">
         <div class="title">
-          <span>NEW ARRIVAL</span>
-          <h2>Latest Collection</h2>
+          <span>Koleksi</span>
+          <h2>Koleksi Terbaru</h2>
         </div>
-            
+              
         <div class="row container">
           <div class="col">
-            @forelse ($clothings as $cloth)
             <div class="top">
               <img src="{{ Storage::url('public/cloth/').$cloth->image }}" />
             </div>
@@ -141,57 +94,48 @@
             </div>
           </div>
         </div>
-        @empty
-            <div class="alert alert-danger">
-                Data Clothing belum Tersedia.
-            </div>
-        @endforelse
       </section>
-
-    <!-- ====== Categories ====== -->
-    <section class="section categories">
-      <div class="title">
-        <span>CATEGORIES</span>
-        <h2>2021 Latest Collection</h2>
-      </div>
-
-      <div class="products container">
-        <!-- <div class="product">
-          <div class="top d-flex">
-            <img src="/img/product-1.png" alt="" />
-            <div class="icon d-flex">
-              <i class="bx bxs-heart"></i>
+      @endforeach --}}
+      <section class="section blog">
+        <div class="title">
+          <span>Koleksi</span>
+          <h2>Koleksi Terbaru</h2>
+        </div>
+  
+        <div class="row container">
+          
+          @forelse ($clothings as $cloth)    
+          <div class="col" style="background-color: white;">
+            <div class="top">
+              <img src="{{ Storage::url('public/cloth/').$cloth->image }}" alt="" width="360" height="200" />
+            </div>
+            <div class="bottom">
+              <h3>{{$cloth->title}}</h3>
+              <span>{{$cloth->harga}}</span>
+              <h4>
+                {!! substr($cloth->content, 0, 100) !!}...
+              </h4>
+              <a class="fancy" href="#">
+                <span class="top-key"></span>
+                <span class="text"><p style="font-size: 13px;">Lihat Selengkapnya</p></span>
+                <span class="bottom-key-1"></span>
+                <span class="bottom-key-2"></span>
+              </a>
             </div>
           </div>
-          <div class="bottom">
-            <div class="d-flex">
-              <h4>Nike Air Men’s Hoodie - Imported Hoodie Red</h4>
-              <a href="" class="btn cart-btn">Add to Cart</a>
-            </div>
-            <div class="d-flex">
-              <div class="price">$150</div>
-              <div class="rating">
-                <i class="bx bxs-star"></i>
-                <i class="bx bxs-star"></i>
-                <i class="bx bxs-star"></i>
-                <i class="bx bxs-star"></i>
-                <i class="bx bxs-star"></i>
+          @empty
+              <div class="alert alert-danger">
+                  Fashion belum Tersedia.
               </div>
-            </div>
-          </div>
-        </div> -->
-      </div>
-
-      <div class="button d-flex">
-        <a class="btn loadmore">Load More</a>
-      </div>
-    </section>
+          @endforelse
+        </div>
+      </section>
 
     <!-- ====== Statistics ====== -->
     <section class="section statistics">
       <div class="title">
         <span>STATS</span>
-        <h2>Our Statistics</h2>
+        <h2>Statistik Kami</h2>
       </div>
 
       <div class="row container">
@@ -199,28 +143,28 @@
           <div class="icon">
             <i class="bx bxs-check-square"></i>
           </div>
-          <h3>Easy Order System</h3>
-          <p>Lorem Ispum is a placeholder text commomly used as a free text.</p>
+          <h3>Sistem Pemesanan Mudah</h3>
+          <p>Sebuah sistem yang dirancang untuk memudahkan proses pemesanan suatu produk.</p>
         </div>
         <div class="col">
           <div class="icon">
             <i class="bx bxs-user"></i>
           </div>
-          <h3>On Time Delievery</h3>
-          <p>Lorem Ispum is a placeholder text commomly used as a free text.</p>
+          <h3>Pengiriman tepat waktu</h3>
+          <p>Suatu kondisi dimana barang atau paket berhasil dikirimkan kepada penerima pada waktu yang telah ditentukan sebelumnya, atau dalam waktu yang diharapkan oleh penerima.</p>
         </div>
         <div class="col">
           <div class="icon">
             <i class="bx bxs-dollar-circle"></i>
           </div>
-          <h3>Money Back Gaurantee</h3>
-          <p>Lorem Ispum is a placeholder text commomly used as a free text.</p>
+          <h3>Garansi Uang Kembali</h3>
+          <p>Kebijakan yang ditawarkan oleh penjual atau produsen untuk memberikan jaminan kepada pembeli bahwa jika produk yang dibeli tidak memenuhi harapan.</p>
         </div>
         <div class="col">
           <div class="icon">
             <i class="bx bxs-user"></i>
           </div>
-          <h3>24/7 Customer Support</h3>
+          <h3>24/7 Dukungan Pelanggan</h3>
           <p>Lorem Ispum is a placeholder text commomly used as a free text.</p>
         </div>
       </div>
@@ -233,54 +177,27 @@
           <div class="logo d-flex">
             <img src="/img/logo.svg" alt="logo" />
           </div>
-          <p>
-            Lorem ispum is a placeholder text <br />
-            commonly used as a free text.
+          <p style="font-size: 15px;">
+            perusahaan teknologi yang berfokus pada solusi e-commerce untuk bisnis kecil dan menengah. 
           </p>
           <div class="icons d-flex">
-            <div class="icon d-flex">
-              <i class="bx bxl-facebook"></i>
-            </div>
-            <div class="icon d-flex"><i class="bx bxl-twitter"></i></div>
             <div class="icon d-flex"><i class="bx bxl-instagram"></i></div>
             <div class="icon d-flex"><i class="bx bxl-youtube"></i></div>
           </div>
-          <p class="color">
+          <p class="color" style="font-size: 15px;">
             Copyrights 2023 <br />
             @sijasmkn69jkt
           </p>
         </div>
         <div class="col">
-          <div>
-            <h4>Product</h4>
-            <a href="">Download</a>
-            <a href="">Pricing</a>
-            <a href="">Locations</a>
-            <a href="">Server</a>
-            <a href="">Countries</a>
-            <a href="">Blog</a>
-          </div>
-          <div>
-            <h4>Category</h4>
-            <a href="">Men</a>
-            <a href="">Women</a>
-            <a href="">Kids</a>
-            <a href="">Best Seller</a>
-            <a href="">New Arrivals</a>
-          </div>
-          <div>
-            <h4>My Account</h4>
-            <a href="">My Account</a>
-            <a href="">Discount</a>
-            <a href="">Returns</a>
-            <a href="">Order History</a>
-            <a href="">Order Tracking</a>
+          <div style="margin-right: 100px;">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.433230493772!2d106.9236853141934!3d-6.206445462522951!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e698bcabb1368d7%3A0xea46dd080cc5e54c!2sSMKN%2069%20JAKARTA!5e0!3m2!1sid!2sid!4v1676974754534!5m2!1sid!2sid" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
           </div>
           <div>
             <h4>Contact Us</h4>
             <div class="d-flex">
               <div class="icon"><i class="bx bxs-map"></i></div>
-              <span style="font-size: 15px;">Jl. Swadaya, RT.7/RW.7, Jatinegara, Kec. Cakung, Kota Jakarta Timur, Daerah Khusus Ibukota Jakarta 13930</span>
+              <span style="font-size: 15px; width: 300px;">Jl. Swadaya, RT.7/RW.7, Jatinegara, Kec. Cakung, Kota Jakarta Timur, Daerah Khusus Ibukota Jakarta 13930</span>
             </div>
             <div class="d-flex">
               <div class="icon"><i class="bx bxs-envelope"></i></div>

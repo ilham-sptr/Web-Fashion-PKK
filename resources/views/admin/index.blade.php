@@ -29,10 +29,12 @@
                                     </td>
                                     <td>{{ $cloth->title }}</td>
                                     <td>{{ $cloth->harga }}</td>
-                                    <td>{{ $cloth->updated_at }}</td>
+                                    <td>{{ $cloth->updated_at->format('d M Y H:i') }}</td>
                                     <td>{!! $cloth->content !!}</td>
                                     <td style="width: 100px;">
                                         <form onsubmit="return confirm('Apakah Anda Yakin ?');" action="{{ route('clothing.destroy', $cloth->id) }}" method="POST">
+                                            @csrf
+                                            @method('PUT')
                                             <a href="{{ route('clothing.edit', $cloth->id) }}" class="btn btn-sm btn-primary"><i class='bx bxs-pencil'></i></a>
                                             @csrf
                                             @method('DELETE')
