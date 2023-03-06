@@ -22,7 +22,6 @@
     <div class="row g-5 mx-0 align-items-start">
       <div class="col-md-7">
         <img src="{{ Storage::url('public/cloth/').$clothing->image }}" class="rounded w-100 mt-4" alt="Gambar Kartu">
-        {{-- <img src="{{ Storage::url('public/cloth/').$clothing->image }}" class="img-fluid" style="width: 900px; height: 500px; object-fit: cover;"> --}}
       </div>
       <div class="col-md-5">
         <div class="card-body">
@@ -31,7 +30,7 @@
             <i class='bx bxs-dollar-circle align-items-center' style="font-size: 30px; padding-right: 5px; padding-top: 3px;"></i> {{ Akaunting\Money\Money::IDR($clothing->harga) }}
           </h3>
             <form onsubmit="return confirm('Apakah Anda Yakin Ingin Membeli Ini?');" action="{{ route('user.dibuat', $clothing->id) }}">
-              <button type="submit" class="fw-bold btn btn-md btn-primary px-3 shadow-btn rounded-pill">Beli Sekarang</button>
+              <button type="submit" class="fw-bold btn btn-md btn-success px-3 shadow-btn rounded-pill"><i class='bx bxl-whatsapp'></i> Beli Sekarang</button>
             </form>
         </div>
       </div>

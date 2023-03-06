@@ -11,7 +11,19 @@
                         @method('PUT')
                         <div class="form-group">
                             <label class="font-weight-bold">AVATAR</label>
-                            <input type="file" class="form-control" name="avatar">
+                            <input type="file" class="form-control @error('avatar') is-invalid @enderror" id="avatar" name="avatar" accept="image/*" onchange="previewAvatar()">
+                            @if ($clothing->avatar)
+                            <img src="{{ $clothing->avatar }}" class="avt-preview img-fluid mt-3" style="width: 200px; height: 200px; object-fit: cover;">
+                            @else
+                            <img class="avt-preview img-fluid mt-3" style="width: 200px; height: 200px; object-fit: cover;" hidden>
+                            @endif
+
+                            <!-- error message untuk avatar -->
+                            @error('avatar')
+                                <div class="alert alert-danger mt-2">
+                                    {{ $message }}
+                                </div>
+                            @enderror
                         </div>
 
                         <div class="form-group">
