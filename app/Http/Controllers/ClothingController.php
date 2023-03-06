@@ -171,8 +171,6 @@ public function update(Request $request, Cloting $clothing)
         ]);
 
     } else {
-
-        //upload new image
         if(($request->file('image') == "")){
             $avatar = $request->file('avatar');
             $avatar->storeAs('public/cloth', $avatar->hashName());
@@ -197,7 +195,7 @@ public function update(Request $request, Cloting $clothing)
             //hapus old image
             Storage::disk('local')->delete('public/cloth/'.$clothing->image);
             Storage::disk('local')->delete('public/cloth/'.$clothing->avatar);
-            
+
             $clothing->update([
                 'image'     => $image->hashName(),
                 'avatar'    => $avatar->hashName(),
