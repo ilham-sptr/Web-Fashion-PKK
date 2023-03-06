@@ -172,27 +172,43 @@ public function update(Request $request, Cloting $clothing)
 
     } else {
 
-        //hapus old image
-        Storage::disk('local')->delete('public/cloth/'.$clothing->image);
-        Storage::disk('local')->delete('public/cloth/'.$clothing->avatar);
-
         //upload new image
-        $image = $request->file('image');
-        $avatar = $request->file('avatar');
-        $image->storeAs('public/cloth', $image->hashName());
-        $avatar->storeAs('public/cloth', $avatar->hashName());
+        if(($request->file('image') == "")){
+            $avatar = $request->file('avatar');
+            $avatar->storeAs('public/cloth', $avatar->hashName());
 
-        $clothing->update([
-            'image'     => $image->hashName(),
-            'avatar'    => $avatar->hashName(),
-            'nama'      => $request->nama,
-            'kelas'     => $request->kelas,
-            'title'     => $request->title,
-            'slug'      => $request->slug,
-            'harga'     => $request->harga,
-            'content'   => $request->content
-        ]);
+            Storage::disk('local')->delete('public/cloth/'.$clothing->avatar);
 
+            $clothing->update([
+                'avatar'    => $avatar->hashName(),
+                'nama'      => $request->nama,
+                'kelas'     => $request->kelas,
+                'title'     => $request->title,
+                'slug'      => $request->slug,
+                'harga'     => $request->harga,
+                'content'   => $request->content
+            ]);
+        } else{
+            $avatar = $request->file('avatar');
+            $avatar->storeAs('public/cloth', $avatar->hashName());
+            $image = $request->file('image');
+            $image->storeAs('public/cloth', $image->hashName());
+
+            //hapus old image
+            Storage::disk('local')->delete('public/cloth/'.$clothing->image);
+            Storage::disk('local')->delete('public/cloth/'.$clothing->avatar);
+            
+            $clothing->update([
+                'image'     => $image->hashName(),
+                'avatar'    => $avatar->hashName(),
+                'nama'      => $request->nama,
+                'kelas'     => $request->kelas,
+                'title'     => $request->title,
+                'slug'      => $request->slug,
+                'harga'     => $request->harga,
+                'content'   => $request->content
+            ]);
+        }
     }
 
     if($clothing){
