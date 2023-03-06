@@ -1,5 +1,7 @@
 @extends('layouts.admin')
 @section('content')
+@include('partials.navbarAdmin')
+  
     <div class="container mt-5">
         <div class="row">
             <div class="col-md-12">
@@ -28,8 +30,8 @@
                                         <img src="{{ Storage::url('public/cloth/').$cloth->image }}" class="rounded" style="width: 150px">
                                     </td>
                                     <td>{{ $cloth->title }}</td>
-                                    <td>{{ $cloth->harga }}</td>
-                                    <td>{{ $cloth->updated_at->format('d M Y H:i') }}</td>
+                                    <td style="width: 130px;">{{ $cloth->harga }}</td>
+                                    <td  style="width: 130px;">{{ $cloth->updated_at->format('d M Y H:i') }}</td>
                                     <td>{!! $cloth->content !!}</td>
                                     <td style="width: 100px;">
                                         <form onsubmit="return confirm('Apakah Anda Yakin ?');" action="{{ route('clothing.destroy', $cloth->id) }}" method="POST">

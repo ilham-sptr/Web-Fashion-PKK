@@ -133,6 +133,18 @@ img {
   justify-content: center;
   position: relative;
 }
+
+.header .navbar .row .icons .icon .auth-login {
+  background: #FF6464;
+  padding: 10px 15px;
+  border-radius: 10px;
+  color: white;
+}
+
+.header .navbar .row .icons .icon .auth-login:hover {
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+}
+
 .header .navbar .row .icons .icon:not(:last-child) {
   margin-right: 3rem;
 }
@@ -147,9 +159,7 @@ img {
   right: 0.4rem;
   border-radius: 50%;
 }
-.header .navbar .row .icons .icon:hover {
-  background-color: #f4f4f4;
-}
+
 .header .hamburger,
 .header .close {
   display: none;
@@ -205,6 +215,10 @@ img {
 .header .hero {
   height: 80vh;
   margin: 0 3rem;
+  background: #FF7B54;
+  border-radius: 30px;
+  color: white;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
 }
 .header .hero .row {
   height: 100%;

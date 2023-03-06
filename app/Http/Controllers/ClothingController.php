@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Cloting;
+use App\Models\Alamat;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Storage;
@@ -20,6 +21,28 @@ class ClothingController extends Controller
         ]);
     }
 
+    public function order() {
+        $pengiriman = Alamat::all();
+        return view('admin.order', [
+            'pengiriman' => $pengiriman,
+            'title' => 'Manajemen Order',
+        ]);
+    }
+
+    public function hapusOrder($id)
+    {
+    $clothing = Cloting::findOrFail($id);
+    $clothing->delete();
+
+    if($clothing){
+        //redirect dengan pesan sukses
+        return redirect()->route('clothing.order')->with(['success' => 'Data Berhasil Dihapus!']);
+    }else{
+        //redirect dengan pesan error
+        return redirect()->route('clothing.order')->with(['error' => 'Data Gagal Dihapus!']);
+    }
+    }
+
         /**
     * create
     *
@@ -33,18 +56,18 @@ class ClothingController extends Controller
     }
 
 
-    /**
-     * show
-     * 
-     * 
-     */
+    // /**
+    //  * show
+    //  * 
+    //  * 
+    //  */
 
-    public function show(Cloting $clothing) {
-        return view('cloting', [
-            'title' => 'Single Cloting',
-            'clothing' => $clothing,
-        ]);
-    }
+    // public function show(Cloting $clothing) {
+    //     return view('cloting', [
+    //         'title' => 'Single Cloting',
+    //         'clothing' => $clothing,
+    //     ]);
+    // }
 
     /**
     * store
@@ -55,27 +78,36 @@ class ClothingController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, [
-            'nama'      => 'required',
-            'kelas'     => 'required',
-            'image'     => 'required|image|mimes:png,jpg,jpeg',
-            'title'     => 'required',
-            'slug'      => 'required',
-            'harga'     => 'required',
-            'content'   => 'required'
+            'nama'          => 'required',
+            'email'         => 'required',
+            'nomor_telepon' => 'required',
+            'kelas'         => 'required',
+            'image'         => 'required|image|mimes:png,jpg,jpeg',
+            'avatar'         => 'required|image|mimes:png,jpg,jpeg',
+            'title'         => 'required',
+            'harga'         => 'required',
+            'content'       => 'required',
+            'alamat'        => 'required'
         ]);
 
         //upload image
         $image = $request->file('image');
+        $avatar = $request->file('avatar');
+
         $image->storeAs('public/cloth', $image->hashName());
+        $avatar->storeAs('public/cloth', $avatar->hashName());
 
         $clothing = Cloting::create([
-            'image'     => $image->hashName(),
-            'nama'      => $request->nama,
-            'kelas'     => $request->kelas,
-            'title'     => $request->title,
-            'slug'      => $request->slug,
-            'harga'     => $request->harga,
-            'content'   => $request->content
+            'image'         => $image->hashName(),
+            'avatar'        => $avatar->hashName(),
+            'nama'          => $request->nama,
+            'kelas'         => $request->kelas,
+            'title'         => $request->title,
+            'harga'         => $request->harga,
+            'content'       => $request->content,
+            'email'         => $request->email,
+            'nomor_telepon' => $request->nomor_telepon,
+            'alamat'        => $request->alamat
         ]);
 
         if($clothing){
@@ -109,40 +141,50 @@ public function edit(Cloting $clothing)
 * @param  mixed $blog
 * @return void
 */
-public function update(Request $request, Cloting $clothing, $slug)
+public function update(Request $request, Cloting $clothing)
 {
     $this->validate($request, [
-        'nama'      => 'required',
-        'kelas'     => 'required',
-        'title'     => 'required',
-        'harga'     => 'required',
-        'content'   => 'required'
+        'nama'          => 'required',
+        'kelas'         => 'required',
+        'title'         => 'required',
+        'harga'         => 'required',
+        'content'       => 'required',
+        'email'         => 'required',
+        'nomor_telepon' => 'required',
+        'alamat'        => 'required',
     ]);
 
     //get data Blog by ID
     $clothing = Cloting::findOrFail($clothing->id);
 
-    if($request->file('image') == "") {
+    if($request->file('image') == "" && $request->file('avatar') == "") {
 
         $clothing->update([
-            'nama'      => $request->nama,
-            'kelas'     => $request->kelas,
-            'title'     => $request->title,
-            'harga'     => $request->harga,
-            'content'   => $request->content
+            'nama'          => $request->nama,
+            'kelas'         => $request->kelas,
+            'title'         => $request->title,
+            'harga'         => $request->harga,
+            'content'       => $request->content,
+            'email'         => $request->email,
+            'nomor_telepon' => $request->nomor_telepon,
+            'alamat'        => $request->alamat
         ]);
 
     } else {
 
         //hapus old image
         Storage::disk('local')->delete('public/cloth/'.$clothing->image);
+        Storage::disk('local')->delete('public/cloth/'.$clothing->avatar);
 
         //upload new image
         $image = $request->file('image');
+        $avatar = $request->file('avatar');
         $image->storeAs('public/cloth', $image->hashName());
+        $avatar->storeAs('public/cloth', $avatar->hashName());
 
         $clothing->update([
             'image'     => $image->hashName(),
+            'avatar'    => $avatar->hashName(),
             'nama'      => $request->nama,
             'kelas'     => $request->kelas,
             'title'     => $request->title,
@@ -172,6 +214,7 @@ public function destroy($id)
 {
   $clothing = Cloting::findOrFail($id);
   Storage::disk('local')->delete('public/cloth/'.$clothing->image);
+  Storage::disk('local')->delete('public/cloth/'.$clothing->avatar);
   $clothing->delete();
 
   if($clothing){
@@ -181,5 +224,9 @@ public function destroy($id)
     //redirect dengan pesan error
     return redirect()->route('clothing.index')->with(['error' => 'Data Gagal Dihapus!']);
   }
+}
+
+public function checkSlug(Request $request) {
+    
 }
 }

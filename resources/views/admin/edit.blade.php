@@ -9,6 +9,10 @@
                     <form action="{{ route('clothing.update', $clothing->id) }}" method="POST" enctype="multipart/form-data">
                         @csrf
                         @method('PUT')
+                        <div class="form-group">
+                            <label class="font-weight-bold">AVATAR</label>
+                            <input type="file" class="form-control" name="avatar">
+                        </div>
 
                         <div class="form-group">
                             <label class="font-weight-bold">NAMA</label>
@@ -28,6 +32,42 @@
                         
                             <!-- error message untuk kelas -->
                             @error('kelas')
+                                <div class="alert alert-danger mt-2">
+                                    {{ $message }}
+                                </div>
+                            @enderror
+                        </div>
+
+                        <div class="form-group">
+                            <label class="font-weight-bold">EMAIL</label>
+                            <input type="text" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email', $clothing->email) }}" placeholder="Masukkan Email Anda">
+                        
+                            <!-- error message untuk email -->
+                            @error('email')
+                                <div class="alert alert-danger mt-2">
+                                    {{ $message }}
+                                </div>
+                            @enderror
+                        </div>
+
+                        <div class="form-group">
+                            <label class="font-weight-bold">NOMOR TELEPON</label>
+                            <input type="text" class="form-control @error('nomor_telepon') is-invalid @enderror" name="nomor_telepon" value="{{ old('nomor_telepon', $clothing->nomor_telepon) }}" placeholder="Masukkan Nomor Telepon Anda">
+                        
+                            <!-- error message untuk nomor_telepon -->
+                            @error('nomor_telepon')
+                                <div class="alert alert-danger mt-2">
+                                    {{ $message }}
+                                </div>
+                            @enderror
+                        </div>
+
+                        <div class="form-group">
+                            <label class="font-weight-bold">ALAMAT</label>
+                            <textarea class="form-control @error('alamat') is-invalid @enderror" name="alamat" rows="5" placeholder="Masukkan Alamat Rumah Anda">{{ old('alamat', $clothing->alamat) }}</textarea>
+                        
+                            <!-- error message untuk alamat -->
+                            @error('alamat')
                                 <div class="alert alert-danger mt-2">
                                     {{ $message }}
                                 </div>
