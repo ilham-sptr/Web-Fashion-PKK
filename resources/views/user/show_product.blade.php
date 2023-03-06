@@ -1,4 +1,5 @@
 @extends('layouts.produk')
+<link rel="icon" href="/img/logo-dv.png">
 @include('partials.navbar')
 <style>
   .shadow-btn:hover {

@@ -44,7 +44,10 @@
 
 <div class="content-footer">
   <div class="left-footer">
-    <img src="/img/logo.svg" alt="logo" style="width: 150px; margin-bottom: 20px;">
+    <div style="display: flex; align-items: center;">
+      <img src="/img/logo-dv.png" alt="logo" style="width: 60px; margin-bottom: 20px;">
+      <p style="font-weight: bold; font-size: 22px;padding-bottom: 15px;"><span style="color: #2B3467;">Deal</span><span style="color: #FF8B13;">Vo</span></p>
+    </div>
     <div class="footer-text" style="font-size: 16.5px;">Perusahaan teknologi yang berfokus pada solusi e-commerce untuk bisnis kecil dan menengah. </div>
     <div class="social-icons">
       <a href="#"><i class="fab fa-instagram"></i></a>

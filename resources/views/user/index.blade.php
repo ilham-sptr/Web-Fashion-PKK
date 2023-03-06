@@ -36,7 +36,7 @@
                 <div class="bottom">
                   <h3 style=" color: #FF7B54;text-align: left; font-weight: bold;padding-left: 25px;">{{$cloth->title}}</h3>
                   <h4 style="text-align: left;" class="">{{ Akaunting\Money\Money::IDR($cloth->harga) }}</h4>
-                  <h4  style="text-align: left;">
+                  <h4  style="text-align: left; font-weight: normal; font-style: normal;">
                     {!! substr($cloth->content, 0, 100) !!}...
                   </h4>
                 </div>
