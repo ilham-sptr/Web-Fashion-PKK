@@ -94,36 +94,4 @@
 
     <!-- ====== Footer ====== -->
     @include('partials.footer')
-    <!-- ====== Login and Signup Form ====== -->
-    <div class="user-form">
-      <div class="close-form d-flex"><i class="bx bx-x"></i></div>
-      <div class="form-wrapper container">
-        <div class="user login">
-          <div class="img-box">
-            <img src="/img/login.svg" alt="" />
-          </div>
-          <div class="form-box">
-            <div class="top">
-              <p>
-                Belum punya akun?
-                <span data-id="#ff0066">Daftar Sekarang</span>
-              </p>
-            </div>
-            <form action="">
-              <div class="form-control">
-                <h2>Hello!</h2>
-                <p>Selamat datang kembali.</p>
-                <input type="text" placeholder="Masukkan Username Anda" />
-                <div>
-                  <input type="password" placeholder="Masukkan Password Anda" />
-                  <div class="icon form-icon">
-                    <!-- <img src="/img/eye.svg" alt="" /> -->
-                  </div>
-                </div>
-                <span>Kata Sandi Pemulihan</span>
-                <input type="Submit" value="Login" />
-              </div>
-            </form>
-          </div>
-        </div>
 @endsection
