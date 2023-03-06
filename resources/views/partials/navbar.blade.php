@@ -1,7 +1,9 @@
 <nav class="navbar container-fluid mt-4">
     <div class="row container d-flex">
       <div class="logo">
-        <img src="/img/logo.svg" alt="" />
+        <a href="/">
+          <img src="/img/logo.svg" alt="" />
+        </a>
       </div>
 {{-- 
       <div class="nav-list d-flex">
