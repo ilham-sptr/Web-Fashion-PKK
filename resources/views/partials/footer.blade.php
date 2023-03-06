@@ -50,8 +50,8 @@
     </div>
     <div class="footer-text" style="font-size: 16.5px;">Perusahaan teknologi yang berfokus pada solusi e-commerce untuk bisnis kecil dan menengah. </div>
     <div class="social-icons">
-      <a href="#"><i class="fab fa-instagram"></i></a>
-      <a href="#"><i class="fab fa-youtube"></i></a>
+      <a href="#" style="background: white; padding: 10px; border-radius: 50%; display: flex; align-items: center;"><i class='bx bxl-instagram' style="color: #FD1D1D;font-size: 20px;"></i></a>
+      <a href="#" style="background: white; padding: 10px; border-radius: 50%; display: flex; align-items: center;"><i class="bx bxl-youtube" style="color: red;font-size: 20px;"></i></a>
     </div>
   </div>
   <div class="middle-footer">
@@ -61,15 +61,15 @@
   <div class="right-footer">
     <div class="footer-text" style="font-size: 20px; font-weight: bold;">Contact Us</div>
     <div class="d-flex">
-      <div class="icon" style="background-color: white; margin: 10px; padding: 5px; border-radius: 50%;"><i class="bx bxs-map"></i></div>
+      <div class="icon" style="background-color: white; margin: 10px; padding: 5px; border-radius: 50%;display: flex; align-items: center;"><i class="bx bxs-map"></i></div>
       <span style="font-size: 15px; width: 300px;">Jl. Swadaya, RT.7/RW.7, Jatinegara, Kec. Cakung, Kota Jakarta Timur, Daerah Khusus Ibukota Jakarta 13930</span>
     </div>
     <div class="d-flex">
-      <div class="icon" style="background-color: white; margin: 10px; padding: 5px; border-radius: 50%;"><i class="bx bxs-envelope"></i></div>
+      <div class="icon" style="background-color: white; margin: 10px; padding: 5px; border-radius: 50%;display: flex; align-items: center;"><i class="bx bxs-envelope"></i></div>
       <span style="font-size: 15px;">ilham.26cand@gmail.com</span>
     </div>
     <div class="d-flex">
-      <div class="icon" style="background-color: white; margin: 10px; padding: 5px; border-radius: 50%;"><i class="bx bxs-phone"></i></div>
+      <div class="icon" style="background-color: white; margin: 10px; padding: 5px; border-radius: 50%;display: flex; align-items: center;"><i class="bx bxs-phone"></i></div>
       <span style="font-size: 15px;">+6281299010725</span>
     </div>
   </div>
