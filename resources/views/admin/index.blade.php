@@ -8,6 +8,7 @@
                 <div class="card border-0 shadow rounded">
                     <div class="card-body">
                         <a href="{{ route('clothing.create') }}" class="btn btn-md btn-success mb-3">TAMBAH PRODUK</a>
+                        <div class="table-responsive">
                         <table class="table table-bordered">
                             <thead>
                               <tr>
@@ -51,6 +52,7 @@
                               @endforelse
                             </tbody>
                           </table>  
+                        </div>
                     </div>
                 </div>
             </div>
