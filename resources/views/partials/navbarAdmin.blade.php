@@ -12,8 +12,13 @@
           <a class="nav-link" href="/admin/clothing/order">Manajemen Order</a>
         </li>
       </ul>
-      <span class="navbar-text">
-        Hello Admin
+      <span class="navbar-text px-3">
+        Halo, {{ auth('admin')->user()->name }}
       </span>
+      <a href="/admin/logout">
+        <span class="navbar-text text-danger">
+          <i class='bx bx-log-out'></i> Logout
+        </span>
+      </a>
     </div>
 </nav>

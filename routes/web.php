@@ -2,10 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AppController;
-use App\Http\Controllers\LoginController;
-use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ClothingController;
-use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\AdminLoginController;
 
 /*
@@ -41,13 +38,15 @@ use App\Http\Controllers\AdminLoginController;
 
 // Route::get('/admin/login', [ClothingController::class, 'login'])->name('clothing.order');
 Route::middleware(['guest:admin'])->group(function () {
+    Route::get('/admin', [AdminLoginController::class, 'admin']);
     Route::get('/admin/login', [AdminLoginController::class, 'index'])->name('admin.login');
     Route::post('/admin/login', [AdminLoginController::class, 'login']);
 });
 
 Route::middleware(['auth:admin'])->group(function () {
+    Route::get('/admin/logout', [AdminLoginController::class, 'logout']);
     Route::get('/admin/clothing/order', [ClothingController::class, 'order'])->name('clothing.order');
-    Route::delete('/admin/clothing/order', [ClothingController::class, 'order'])->name('clothing.hapusOrder');
+    Route::delete('/admin/clothing/order/{id}', [ClothingController::class, 'hapusOrder'])->name('clothing.hapusOrder');
     Route::resource('/admin/clothing', ClothingController::class);
 });
 // <!-- Route::get('/admin/clothing/{id}/{slug}', [ClothingController::class, 'edit'])->name('clothing.edit'); -->

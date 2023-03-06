@@ -31,7 +31,7 @@ class ClothingController extends Controller
 
     public function hapusOrder($id)
     {
-    $clothing = Cloting::findOrFail($id);
+    $clothing = Alamat::where('id', $id)->first();
     $clothing->delete();
 
     if($clothing){

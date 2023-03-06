@@ -9,6 +9,10 @@ use Illuminate\Support\Facades\Auth;
 
 class AdminLoginController extends Controller
 {
+    public function admin(){
+        return redirect('/admin/login');
+    }
+
     public function index()
     {
         return view('admin.login', [
@@ -25,7 +29,7 @@ class AdminLoginController extends Controller
 
         if(Auth::guard('admin')->attempt($credentials)) {
             $request->session()->regenerate();
-            return redirect('/admin/program');
+            return redirect('/admin/clothing');
         }
 
 
@@ -38,6 +42,6 @@ class AdminLoginController extends Controller
             $request->session()->invalidate();
             $request->session()->regenerateToken();
         } 
-        return back();
+        return redirect('/admin/login');
     }
 }
