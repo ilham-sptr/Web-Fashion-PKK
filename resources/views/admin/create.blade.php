@@ -13,7 +13,8 @@
                         <hr>
                         <div class="form-group">
                             <label class="font-weight-bold">AVATAR</label>
-                            <input type="file" class="form-control @error('avatar') is-invalid @enderror" name="avatar">
+                            <input type="file" class="form-control @error('avatar') is-invalid @enderror" id="avatar" name="avatar" accept="image/*" onchange="previewAvatar()">
+                            <img class="avt-preview img-fluid mt-3" style="width: 200px; height: 200px; object-fit: cover;" hidden>
                         
                             <!-- error message untuk avatar -->
                             @error('avatar')
@@ -88,7 +89,8 @@
 
                         <div class="form-group">
                             <label class="font-weight-bold">GAMBAR</label>
-                            <input type="file" class="form-control @error('image') is-invalid @enderror" name="image">
+                            <input type="file" class="form-control @error('image') is-invalid @enderror" id="image" name="image" accept="image/*" onchange="previewImage()">
+                            <img class="img-preview img-fluid mt-3" hidden>
                         
                             <!-- error message untuk gambar -->
                             @error('image')
@@ -147,16 +149,46 @@
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 <script src="https://cdn.ckeditor.com/4.13.1/standard/ckeditor.js"></script>
 <script>
-CKEDITOR.replace( 'content' );
-CKEDITOR.replace( 'alamat' );
-</script>
+    CKEDITOR.replace( 'content' );
+    CKEDITOR.replace( 'alamat' );
 
-<script>
+    const previewAvatar = () => {
+        const avatar = document.querySelector('#avatar');
+        const avtPreview = document.querySelector('.avt-preview');
+
+        avtPreview.removeAttribute('hidden')
+        avtPreview.style.display = 'block';
+
+        const oFReader = new FileReader();
+        oFReader.readAsDataURL(avatar.files[0]);
+
+        oFReader.onload = (oFRevent) => {
+            avtPreview.src = oFRevent.target.result;
+        }
+    }
+    const previewImage = () => {
+        const image = document.querySelector('#image');
+        const imgPreview = document.querySelector('.img-preview');
+
+        imgPreview.removeAttribute('hidden')
+        imgPreview.style.display = 'block';
+
+        const oFReader = new FileReader();
+        oFReader.readAsDataURL(image.files[0]);
+
+        oFReader.onload = (oFRevent) => {
+            imgPreview.src = oFRevent.target.result;
+        }
+    }
+
     const title = document.querySelector('#title');
     const slug = document.querySelector('#slug');
 
     title.addEventListener('change', function() {
         fetch('')
     })
+</script>
+
+<script>
 </script>
 @endsection

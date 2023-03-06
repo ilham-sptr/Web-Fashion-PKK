@@ -77,7 +77,40 @@ class ClothingController extends Controller
     */
     public function store(Request $request)
     {
-        $this->validate($request, [
+        // $this->validate($request, [
+        //     'nama'          => 'required',
+        //     'email'         => 'required',
+        //     'nomor_telepon' => 'required',
+        //     'kelas'         => 'required',
+        //     'image'         => 'required|image|mimes:png,jpg,jpeg',
+        //     'avatar'         => 'required|image|mimes:png,jpg,jpeg',
+        //     'title'         => 'required',
+        //     'harga'         => 'required',
+        //     'content'       => 'required',
+        //     'alamat'        => 'required'
+        // ]);
+
+        // //upload image
+        // $image = $request->file('image');
+        // $avatar = $request->file('avatar');
+
+        // $image->storeAs('public/cloth', $image->hashName());
+        // $avatar->storeAs('public/cloth', $avatar->hashName());
+
+        // $clothing = Cloting::create([
+        //     'image'         => $image->hashName(),
+        //     'avatar'        => $avatar->hashName(),
+        //     'nama'          => $request->nama,
+        //     'kelas'         => $request->kelas,
+        //     'title'         => $request->title,
+        //     'harga'         => $request->harga,
+        //     'content'       => $request->content,
+        //     'email'         => $request->email,
+        //     'nomor_telepon' => $request->nomor_telepon,
+        //     'alamat'        => $request->alamat
+        // ]);
+
+        $validated_data =  $request->validate([
             'nama'          => 'required',
             'email'         => 'required',
             'nomor_telepon' => 'required',
@@ -90,25 +123,17 @@ class ClothingController extends Controller
             'alamat'        => 'required'
         ]);
 
-        //upload image
-        $image = $request->file('image');
-        $avatar = $request->file('avatar');
+        dd($validated_data);
 
-        $image->storeAs('public/cloth', $image->hashName());
-        $avatar->storeAs('public/cloth', $avatar->hashName());
+        $filename_image = 'image -' . time() . '.' . $request->image->getClientOriginalExtension();
+        $filename_avatar = 'avatar' . time() . '.' . $request->avatar->getClientOriginalExtension();
+        $image = $request->gambar->storeAs('product', $filename_image);
+        $avatar = $request->gambar->storeAs('product', $filename_avatar);
 
-        $clothing = Cloting::create([
-            'image'         => $image->hashName(),
-            'avatar'        => $avatar->hashName(),
-            'nama'          => $request->nama,
-            'kelas'         => $request->kelas,
-            'title'         => $request->title,
-            'harga'         => $request->harga,
-            'content'       => $request->content,
-            'email'         => $request->email,
-            'nomor_telepon' => $request->nomor_telepon,
-            'alamat'        => $request->alamat
-        ]);
+        $validated_data['image'] = "/storage/" . $image;
+        $validated_data['avatar'] = "/storage/" . $avatar;
+
+        $clothing = Cloting::create($validated_data);
 
         if($clothing){
             //redirect dengan pesan sukses

@@ -129,8 +129,36 @@
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 <script src="https://cdn.ckeditor.com/4.13.1/standard/ckeditor.js"></script>
 <script>
-CKEDITOR.replace( 'content' );
-CKEDITOR.replace( 'alamat' );
+    CKEDITOR.replace( 'content' );
+    CKEDITOR.replace( 'alamat' );
 
+    const previewAvatar = () => {
+        const avatar = document.querySelector('#avatar');
+        const avtPreview = document.querySelector('.avt-preview');
+
+        avtPreview.removeAttribute('hidden')
+        avtPreview.style.display = 'block';
+
+        const oFReader = new FileReader();
+        oFReader.readAsDataURL(avatar.files[0]);
+
+        oFReader.onload = (oFRevent) => {
+            avtPreview.src = oFRevent.target.result;
+        }
+    }
+    const previewImage = () => {
+        const image = document.querySelector('#image');
+        const imgPreview = document.querySelector('.img-preview');
+
+        imgPreview.removeAttribute('hidden')
+        imgPreview.style.display = 'block';
+
+        const oFReader = new FileReader();
+        oFReader.readAsDataURL(image.files[0]);
+
+        oFReader.onload = (oFRevent) => {
+            imgPreview.src = oFRevent.target.result;
+        }
+    }
 </script>
 @endsection
