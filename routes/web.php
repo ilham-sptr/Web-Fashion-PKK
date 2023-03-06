@@ -48,7 +48,7 @@ Route::middleware(['guest:admin'])->group(function () {
 Route::middleware(['auth:admin'])->group(function () {
     Route::get('/admin/logout', [AdminLoginController::class, 'logout']);
     Route::get('/admin/clothing/order', [ClothingController::class, 'order'])->name('clothing.order');
-    Route::delete('/admin/clothing/order/{id}', [ClothingController::class, 'order'])->name('clothing.hapusOrder');
+    Route::delete('/admin/clothing/order/{id}', [ClothingController::class, 'hapusOrder'])->name('clothing.hapusOrder');
     Route::resource('/admin/clothing', ClothingController::class);
 });
 // <!-- Route::get('/admin/clothing/{id}/{slug}', [ClothingController::class, 'edit'])->name('clothing.edit'); -->
