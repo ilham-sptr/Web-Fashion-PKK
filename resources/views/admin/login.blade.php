@@ -15,23 +15,27 @@
   </head>
   <body>
     <div class="container">
-      <div class="row">
-        <div class="col-md-6 offset-md-3">
-          <!-- Form login akan ditambahkan di sini -->
-          <form action="/admin/login" method="POST">
-            @csrf
-            <h1 class="text-center mb-4">Login</h1>
-            <div class="mb-3">
-              <label for="email" class="form-label">Email</label>
-              <input type="text" class="form-control" id="email" placeholder="Masukkan Email" name="email">
-            </div>
-            <div class="mb-3">
-              <label for="password" class="form-label">Password</label>
-              <input type="password" class="form-control" id="password" placeholder="Masukkan password" name="password">
-            </div>
-            <button type="submit" class="btn btn-primary w-100">Login</button>
-          </form>
-          
+      <div class="row justify-content-center align-items-center vh-100">
+        <div class="col-md-6">
+        <div class="card">
+          <div class="card-body">
+                <!-- Form login akan ditambahkan di sini -->
+                <form action="/admin/login" method="POST">
+                  @csrf
+                  <h3 class="text-center mb-4" style="font-weight: bold;">Login Admin</h3>
+                  <div class="mb-3">
+                    <label for="email" class="form-label">Email</label>
+                    <input type="text" class="form-control" id="email" placeholder="Masukkan Email" name="email">
+                  </div>
+                  <div class="mb-3">
+                    <label for="password" class="form-label">Password</label>
+                    <input type="password" class="form-control" id="password" placeholder="Masukkan password" name="password">
+                  </div>
+                  <button type="submit" class="btn btn-primary w-100">Login</button>
+                </form>
+                
+          </div>
+        </div>
         </div>
       </div>
     </div>
