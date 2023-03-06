@@ -53,9 +53,11 @@
             <p>{{$clothing->email}}</p>
           </div>
         </div>
-        <div style="width: 450px;">
+        <div>
           <h6 class="fw-bold">Alamat:</h6>
-          <h6 style="line-height: 25px;"> {!! $clothing->alamat !!}</h6>
+          <div style="width: 450px;">
+            <h6 style="line-height: 25px;"> {!! $clothing->alamat !!}</h6>
+          </div>
         </div>
       </div>
 </div>

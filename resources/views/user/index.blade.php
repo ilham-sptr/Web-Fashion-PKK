@@ -27,18 +27,16 @@
         <div class="row container">
           
           @forelse ($clothings as $cloth)
-          <div class="center" style="display: flex; align-items: center; justify-content: center;">
+          <div class="center-produk" style="display: flex; align-items: center; justify-content: center;">
             <a href="{{ route('user.show', $cloth->id) }}">
-              <div class="col" style="background-color: white; height: 500px; width: 350px;">
+              <div class="col produk-hover" style="background-color: white; height: 500px; width: 350px;">
                 <div class="top">
                   <img src="{{ Storage::url('public/cloth/').$cloth->image }}" alt="" width="360" height="200" />
                 </div>
                 <div class="bottom">
                   <h3 style=" color: #FF7B54;text-align: left; font-weight: bold;padding-left: 25px;">{{$cloth->title}}</h3>
                   <h4 style="text-align: left;" class="">{{ Akaunting\Money\Money::IDR($cloth->harga) }}</h4>
-                  <h4  style="text-align: left; font-weight: normal; font-style: normal; width: 350px;">
-                    {!! substr($cloth->content, 0, 100) !!}...
-                  </h4>
+                  <h4  style="text-align: left; font-weight: normal; font-style: normal; width: 350px;">{!! substr($cloth->content, 0, 100) !!}...</h4>
                 </div>
               </div>
             </a>
