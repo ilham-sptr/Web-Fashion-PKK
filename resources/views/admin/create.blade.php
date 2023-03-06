@@ -7,14 +7,13 @@
             <div class="card border-0 shadow rounded">
                 <div class="card-body">
                     <form action="{{ route('clothing.store') }}" method="POST" enctype="multipart/form-data">
-                    
                         @csrf
                         <h3>Seller</h3>
                         <hr>
                         <div class="form-group">
                             <label class="font-weight-bold">AVATAR</label>
                             <input type="file" class="form-control @error('avatar') is-invalid @enderror" id="avatar" name="avatar" accept="image/*" onchange="previewAvatar()">
-                            <img class="avt-preview img-fluid mt-3" style="width: 200px; height: 200px; object-fit: cover;" hidden>
+                            <img class="avt-preview img-fluid mt-3" style="width: 20%; height: 20%; object-fit: cover;" hidden>
                         
                             <!-- error message untuk avatar -->
                             @error('avatar')
@@ -90,7 +89,7 @@
                         <div class="form-group">
                             <label class="font-weight-bold">GAMBAR</label>
                             <input type="file" class="form-control @error('image') is-invalid @enderror" id="image" name="image" accept="image/*" onchange="previewImage()">
-                            <img class="img-preview img-fluid mt-3" hidden>
+                            <img class="img-preview img-fluid mt-3" style="width: 80%" hidden>
                         
                             <!-- error message untuk gambar -->
                             @error('image')
@@ -136,7 +135,7 @@
                         </div>
 
                         <button type="submit" class="btn btn-md btn-primary">SIMPAN</button>
-                        <button type="reset" class="btn btn-md btn-warning">RESET</button>
+                        <button type="button" class="btn btn-md btn-warning">KEMBALI</button>
 
                     </form> 
                 </div>

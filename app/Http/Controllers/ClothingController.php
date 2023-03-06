@@ -112,30 +112,6 @@ class ClothingController extends Controller
             'alamat'        => $request->alamat
         ]);
 
-        // $validated_data =  $request->validate([
-        //     'nama'          => 'required',
-        //     'email'         => 'required',
-        //     'nomor_telepon' => 'required',
-        //     'kelas'         => 'required',
-        //     'image'         => 'required|image|mimes:jpeg,png,jpg,gif,svg,jfif',
-        //     'avatar'         => 'required|image|mimes:jpeg,png,jpg,gif,svg,jfif',
-        //     'title'         => 'required',
-        //     'harga'         => 'required',
-        //     'content'       => 'required',
-        //     'alamat'        => 'required'
-        // ]);
-
-        // $filename_image = 'image-' . time() . '.' . $request->image->getClientOriginalExtension();
-        // $filename_avatar = 'avatar-' . time() . '.' . $request->avatar->getClientOriginalExtension();
-        // $image = $request->image->storeAs('/public/cloth', $filename_image);
-        // $avatar = $request->avatar->storeAs('/public/cloth', $filename_avatar);
-
-        
-        // $validated_data['image'] = "/storage/" . $image;
-        // $validated_data['avatar'] = "/storage/" . $avatar;
-        
-        // $clothing = Cloting::create($validated_data);
-
         if($clothing){
             //redirect dengan pesan sukses
             return redirect()->route('clothing.index')->with(['success' => 'Data Berhasil Disimpan!']);
@@ -180,6 +156,9 @@ public function update(Request $request, Cloting $clothing)
         'alamat'        => 'required',
     ]);
 
+    $image = $request->file('image');
+    $avatar = $request->file('avatar');
+
     //get data Blog by ID
     $clothing = Cloting::findOrFail($clothing->id);
 
@@ -198,13 +177,28 @@ public function update(Request $request, Cloting $clothing)
 
     } else {
         if(($request->file('image') == "")){
-            $avatar = $request->file('avatar');
-            $avatar->storeAs('public/cloth', $avatar->hashName());
+            $filename_avatar = 'avatar-' . time() . '.' . $request->avatar->getClientOriginalExtension();
+            $avatar->storeAs('public/cloth', $filename_avatar);
 
             Storage::disk('local')->delete('public/cloth/'.$clothing->avatar);
 
             $clothing->update([
-                'avatar'    => $avatar->hashName(),
+                'avatar'    => $filename_avatar,
+                'nama'      => $request->nama,
+                'kelas'     => $request->kelas,
+                'title'     => $request->title,
+                'slug'      => $request->slug,
+                'harga'     => $request->harga,
+                'content'   => $request->content
+            ]);
+        } else if(($request->file('avatar') == "")){
+            $filename_image = 'image-' . time() . '.' . $request->image->getClientOriginalExtension();
+            $image->storeAs('public/cloth', $filename_image);
+
+            Storage::disk('local')->delete('public/cloth/'.$clothing->image);
+
+            $clothing->update([
+                'image'    => $filename_image,
                 'nama'      => $request->nama,
                 'kelas'     => $request->kelas,
                 'title'     => $request->title,
@@ -213,18 +207,18 @@ public function update(Request $request, Cloting $clothing)
                 'content'   => $request->content
             ]);
         } else{
-            $avatar = $request->file('avatar');
-            $avatar->storeAs('public/cloth', $avatar->hashName());
-            $image = $request->file('image');
-            $image->storeAs('public/cloth', $image->hashName());
+            $filename_image = 'image-' . time() . '.' . $request->image->getClientOriginalExtension();
+            $filename_avatar = 'avatar-' . time() . '.' . $request->avatar->getClientOriginalExtension();
+            $image->storeAs('public/cloth', $filename_image);
+            $avatar->storeAs('public/cloth', $filename_avatar);
 
             //hapus old image
             Storage::disk('local')->delete('public/cloth/'.$clothing->image);
             Storage::disk('local')->delete('public/cloth/'.$clothing->avatar);
 
             $clothing->update([
-                'image'     => $image->hashName(),
-                'avatar'    => $avatar->hashName(),
+                'image'     => $filename_image,
+                'avatar'    => $filename_avatar,
                 'nama'      => $request->nama,
                 'kelas'     => $request->kelas,
                 'title'     => $request->title,

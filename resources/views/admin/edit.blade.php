@@ -7,15 +7,17 @@
             <div class="card border-0 shadow rounded">
                 <div class="card-body">
                     <form action="{{ route('clothing.update', $clothing->id) }}" method="POST" enctype="multipart/form-data">
-                        @csrf
                         @method('PUT')
+                        @csrf
+                        <h3>Seller</h3>
+                        <hr>
                         <div class="form-group">
                             <label class="font-weight-bold">AVATAR</label>
                             <input type="file" class="form-control @error('avatar') is-invalid @enderror" id="avatar" name="avatar" accept="image/*" onchange="previewAvatar()">
                             @if ($clothing->avatar)
-                            <img src="{{ $clothing->avatar }}" class="avt-preview img-fluid mt-3" style="width: 200px; height: 200px; object-fit: cover;">
+                            <img src="{{ Storage::url('public/cloth/').$clothing->avatar }}" class="avt-preview img-fluid mt-3" style="width: 200px; height: 200px; object-fit: cover;">
                             @else
-                            <img class="avt-preview img-fluid mt-3" style="width: 200px; height: 200px; object-fit: cover;" hidden>
+                            <img class="avt-preview img-fluid mt-3" style="width: 20%; height: 20%; object-fit: cover;" hidden>
                             @endif
 
                             <!-- error message untuk avatar -->
@@ -86,9 +88,17 @@
                             @enderror
                         </div>
 
+                        <h3>Produk</h3>
+                        <hr>
+
                         <div class="form-group">
                             <label class="font-weight-bold">GAMBAR</label>
-                            <input type="file" class="form-control" name="image">
+                            <input type="file" class="form-control @error('image') is-invalid @enderror" id="image" name="image" accept="image/*" onchange="previewImage()">
+                            @if ($clothing->avatar)
+                            <img src="{{ Storage::url('public/cloth/').$clothing->image }}" class="img-preview img-fluid mt-3" style="width: 80%">
+                            @else
+                            <img class="img-preview img-fluid mt-3" hidden>
+                            @endif
                         </div>
 
                         <div class="form-group">
@@ -128,7 +138,7 @@
                         </div>
 
                         <button type="submit" class="btn btn-md btn-primary">UPDATE</button>
-                        <button type="reset" class="btn btn-md btn-warning">RESET</button>
+                        <button type="button" class="btn btn-md btn-warning">KEMBALI</button>
 
                     </form> 
                 </div>
