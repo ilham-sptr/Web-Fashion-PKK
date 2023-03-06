@@ -28,11 +28,11 @@
           </div>
           <div class="d-flex">
             <div class="icon"><i class="bx bxs-envelope"></i></div>
-            <span style="font-size: 15px;">ilham.26cand@gmail.com</span>
+            <span style="font-size: 15px;">sijasmkn69jkt@gmail.com</span>
           </div>
           <div class="d-flex">
             <div class="icon"><i class="bx bxs-phone"></i></div>
-            <span style="font-size: 15px;">+6281299010725</span>
+            <span style="font-size: 15px;">021-22131229</span>
           </div>
         </div>
       </div>

@@ -9,6 +9,8 @@
                     <form action="{{ route('clothing.store') }}" method="POST" enctype="multipart/form-data">
                     
                         @csrf
+                        <h3>Seller</h3>
+                        <hr>
                         <div class="form-group">
                             <label class="font-weight-bold">AVATAR</label>
                             <input type="file" class="form-control @error('avatar') is-invalid @enderror" name="avatar">
@@ -81,6 +83,9 @@
                             @enderror
                         </div>
 
+                        <h3>Produk</h3>
+                        <hr>
+
                         <div class="form-group">
                             <label class="font-weight-bold">GAMBAR</label>
                             <input type="file" class="form-control @error('image') is-invalid @enderror" name="image">
@@ -143,7 +148,6 @@
 <script src="https://cdn.ckeditor.com/4.13.1/standard/ckeditor.js"></script>
 <script>
 CKEDITOR.replace( 'content' );
-CKEDITOR.replace( 'alamat' );
 </script>
 
 <script>
