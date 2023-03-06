@@ -55,6 +55,7 @@ Route::middleware(['auth:admin'])->group(function () {
 
 // user
 Route::get('/', [AppController::class, 'index']);
+Route::get('/produk', [AppController::class, 'product'])->name('user.show');
 Route::get('/produk/{id}', [AppController::class, 'show'])->name('user.show');
 Route::get('/produk/{id}/pengiriman/create', [AppController::class, 'createPengiriman'])->name('user.dibuat');
 Route::get('/produk/{id}/pengiriman', [AppController::class, 'showPengiriman'])->name('user.lihat');

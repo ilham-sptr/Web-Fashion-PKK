@@ -17,6 +17,10 @@ class AppController extends Controller
         ]);
     }
 
+    public function product() {
+        return redirect('/');   
+    }
+
     public function show($id, Cloting $clothing) {
         $clothing = Cloting::where('id', $id)->first();
         return view('user.show_product', [

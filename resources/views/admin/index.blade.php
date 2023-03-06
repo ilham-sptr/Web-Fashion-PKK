@@ -17,7 +17,7 @@
                                 <th scope="col">GAMBAR</th>
                                 <th scope="col">JUDUL</th>
                                 <th scope="col">HARGA</th>
-                                <th scope="col">DITERBIT</th>
+                                <th scope="col">TERBIT</th>
                                 <th scope="col">CONTENT</th>
                                 <th scope="col">AKSI</th>
                               </tr>
@@ -31,7 +31,7 @@
                                         <img src="{{ Storage::url('public/cloth/').$cloth->image }}" class="rounded" style="width: 150px">
                                     </td>
                                     <td>{{ $cloth->title }}</td>
-                                    <td style="width: 130px;">{{ $cloth->harga }}</td>
+                                    <td style="width: 130px;">{{ Akaunting\Money\Money::IDR($cloth->harga) }}</td>
                                     <td  style="width: 130px;">{{ $cloth->updated_at->format('d M Y H:i') }}</td>
                                     <td>{!! $cloth->content !!}</td>
                                     <td style="width: 100px;">

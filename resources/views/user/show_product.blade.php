@@ -16,7 +16,7 @@
         <div class="card-body">
           <h1 class="card-title" style="font-weight: bold;">{{$clothing->title}}</h1>
           <h3 class="card-text d-flex mt-0 mb-5" style="color: #205E61;">
-            <i class='bx bxs-dollar-circle align-items-center' style="font-size: 30px; padding-right: 5px; padding-top: 3px;"></i> {{$clothing->harga}}
+            <i class='bx bxs-dollar-circle align-items-center' style="font-size: 30px; padding-right: 5px; padding-top: 3px;"></i> {{ Akaunting\Money\Money::IDR($clothing->harga) }}
           </h3>
             <form onsubmit="return confirm('Apakah Anda Yakin Ingin Membeli Ini?');" action="{{ route('user.dibuat', $clothing->id) }}">
               <button type="submit" class="fw-bold btn btn-md btn-primary px-3 shadow-btn rounded-pill">Beli Sekarang</button>
