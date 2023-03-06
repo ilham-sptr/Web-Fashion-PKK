@@ -50,8 +50,8 @@
     </div>
     <div class="footer-text" style="font-size: 16.5px;">Perusahaan teknologi yang berfokus pada solusi e-commerce untuk bisnis kecil dan menengah. </div>
     <div class="social-icons">
-      <a href="#" style="background: white; padding: 10px; border-radius: 50%; display: flex; align-items: center;"><i class='bx bxl-instagram' style="color: #FD1D1D;font-size: 20px;"></i></a>
-      <a href="#" style="background: white; padding: 10px; border-radius: 50%; display: flex; align-items: center;"><i class="bx bxl-youtube" style="color: red;font-size: 20px;"></i></a>
+      <a href="https://www.instagram.com/smkn69jkt/" target="_blank" style="background: white; padding: 10px; border-radius: 50%; display: flex; align-items: center;"><i class='bx bxl-instagram' style="color: #FD1D1D;font-size: 20px;"></i></a>
+      <a href="https://www.youtube.com/@smkn69jakarta25" target="_blank" style="background: white; padding: 10px; border-radius: 50%; display: flex; align-items: center;"><i class="bx bxl-youtube" style="color: red;font-size: 20px;"></i></a>
     </div>
   </div>
   <div class="middle-footer">

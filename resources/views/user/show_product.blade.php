@@ -1,6 +1,16 @@
 @extends('layouts.produk')
 <link rel="icon" href="/img/logo-dv.png">
-@include('partials.navbar')
+{{-- @include('partials.navbar') --}}
+<nav class="navbar container-fluid mt-4">
+  <div class="row container d-flex">
+    <div class="logo" style="">
+      <a href="/" style="display: flex; align-items: center; text-decoration: none;">
+        <img src="/img/logo-dv.png" alt="" width="60" />
+        <p style="font-weight: bold; font-size: 22px; padding-top: 20px;"><span style="color: #2B3467;">Deal</span><span style="color: #FF8B13;">Vo</span></p>
+      </a>
+    </div>
+  </div>
+</nav>
 <style>
   .shadow-btn:hover {
     background-color: #1567aa !important;

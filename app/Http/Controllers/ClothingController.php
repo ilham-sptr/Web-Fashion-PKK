@@ -17,7 +17,7 @@ class ClothingController extends Controller
         $clothings = Cloting::all();
         return view('admin.index', [
             'clothings' => $clothings,
-            'title' => 'Data Clothing - XII SIJA 1 ',
+            'title' => 'Data Clothing - DealVo ',
         ]);
     }
 
