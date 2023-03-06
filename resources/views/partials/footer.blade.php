@@ -1,3 +1,4 @@
+{{-- <div class="center" style="">
 <footer class="footer" style="font-size: 15px;">
     <div class="row container">
       <div class="col">
@@ -38,3 +39,35 @@
       </div>
     </div>
   </footer>
+</div> --}}
+
+
+<div class="content-footer">
+  <div class="left-footer">
+    <img src="/img/logo.svg" alt="logo" style="width: 150px; margin-bottom: 20px;">
+    <div class="footer-text" style="font-size: 16.5px;">Perusahaan teknologi yang berfokus pada solusi e-commerce untuk bisnis kecil dan menengah. </div>
+    <div class="social-icons">
+      <a href="#"><i class="fab fa-instagram"></i></a>
+      <a href="#"><i class="fab fa-youtube"></i></a>
+    </div>
+  </div>
+  <div class="middle-footer">
+    {{-- <div class="footer-text">Ini adalah teks di tengah iframe</div> --}}
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.433230493772!2d106.9236853141934!3d-6.206445462522951!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e698bcabb1368d7%3A0xea46dd080cc5e54c!2sSMKN%2069%20JAKARTA!5e0!3m2!1sid!2sid!4v1676974754534!5m2!1sid!2sid" width="300" height="200" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+  </div>
+  <div class="right-footer">
+    <div class="footer-text" style="font-size: 20px; font-weight: bold;">Contact Us</div>
+    <div class="d-flex">
+      <div class="icon" style="background-color: white; margin: 10px; padding: 5px; border-radius: 50%;"><i class="bx bxs-map"></i></div>
+      <span style="font-size: 15px; width: 300px;">Jl. Swadaya, RT.7/RW.7, Jatinegara, Kec. Cakung, Kota Jakarta Timur, Daerah Khusus Ibukota Jakarta 13930</span>
+    </div>
+    <div class="d-flex">
+      <div class="icon" style="background-color: white; margin: 10px; padding: 5px; border-radius: 50%;"><i class="bx bxs-envelope"></i></div>
+      <span style="font-size: 15px;">ilham.26cand@gmail.com</span>
+    </div>
+    <div class="d-flex">
+      <div class="icon" style="background-color: white; margin: 10px; padding: 5px; border-radius: 50%;"><i class="bx bxs-phone"></i></div>
+      <span style="font-size: 15px;">+6281299010725</span>
+    </div>
+  </div>
+</div>
