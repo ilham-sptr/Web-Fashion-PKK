@@ -9,10 +9,11 @@
 @section('content')
 <div class="container pb-5">
     <div class="row g-5 mx-0 align-items-start">
-      <div class="col-md-5">
-        <img src="{{ Storage::url('public/cloth/').$clothing->image }}" class="rounded w-100 mt-4" alt="Gambar Kartu">
-      </div>
       <div class="col-md-7">
+        <img src="{{ Storage::url('public/cloth/').$clothing->image }}" class="rounded w-100 mt-4" alt="Gambar Kartu">
+        {{-- <img src="{{ Storage::url('public/cloth/').$clothing->image }}" class="img-fluid" style="width: 900px; height: 500px; object-fit: cover;"> --}}
+      </div>
+      <div class="col-md-5">
         <div class="card-body">
           <h1 class="card-title" style="font-weight: bold;">{{$clothing->title}}</h1>
           <h3 class="card-text d-flex mt-0 mb-5" style="color: #205E61;">
