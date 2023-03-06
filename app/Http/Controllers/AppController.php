@@ -13,7 +13,7 @@ class AppController extends Controller
         $clothings = Cloting::all();
         return view('user.index', [
             'clothings' => $clothings,
-            'title'     => 'Codevo | Jual Beli Online di Indonesia',
+            'title'     => 'DealVo | Jual Beli Online di Indonesia',
         ]);
     }
 
@@ -24,7 +24,7 @@ class AppController extends Controller
     public function show($id, Cloting $clothing) {
         $clothing = Cloting::where('id', $id)->first();
         return view('user.show_product', [
-            'title'     => $clothing->title . ' | Codevo',
+            'title'     => $clothing->title . ' | DealVo',
             'clothing'  => $clothing
         ]); 
     }
