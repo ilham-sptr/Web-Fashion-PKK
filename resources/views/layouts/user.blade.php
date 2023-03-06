@@ -24,7 +24,7 @@
     <link rel="stylesheet" href="/css/styles.css" />
     <title>{{$title}}</title>
   </head>
-  <body>
+  <body style="overflow-x: hidden;">
     @yield('content')
     <!-- ====== SwiperJs ====== -->
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>

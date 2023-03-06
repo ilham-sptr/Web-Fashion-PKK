@@ -18,31 +18,6 @@
         </div>
       </div>
     </header>
-
-      <!-- ====== Blog ====== -->
-      {{-- @foreach ($clothings as $cloth)
-    <section class="section blog">
-        <div class="title">
-          <span>Koleksi</span>
-          <h2>Koleksi Terbaru</h2>
-        </div>
-              
-        <div class="row container">
-          <div class="col">
-            <div class="top">
-              <img src="{{ Storage::url('public/cloth/').$cloth->image }}" />
-            </div>
-            <div class="bottom">
-              <h3>{{$cloth->title}}</h3>
-              <h4>
-                {!! $cloth->content !!}
-              </h4>
-              <span>{{$cloth->harga}}</span>
-            </div>
-          </div>
-        </div>
-      </section>
-      @endforeach --}}
       <section class="section blog">
         <div class="title">
           <span>COLLECTION</span>
@@ -52,28 +27,22 @@
         <div class="row container">
           
           @forelse ($clothings as $cloth)
-          <a href="{{ route('user.show', $cloth->id) }}">
-            <div class="col" style="background-color: white; height: 500px;">
-              <div class="top">
-                <img src="{{ Storage::url('public/cloth/').$cloth->image }}" alt="" width="360" height="200" />
+          <div class="center" style="display: flex; align-items: center; justify-content: center;">
+            <a href="{{ route('user.show', $cloth->id) }}">
+              <div class="col" style="background-color: white; height: 500px; width: 350px;">
+                <div class="top">
+                  <img src="{{ Storage::url('public/cloth/').$cloth->image }}" alt="" width="360" height="200" />
+                </div>
+                <div class="bottom">
+                  <h3 style=" color: #FF7B54;text-align: left; font-weight: bold;padding-left: 25px;">{{$cloth->title}}</h3>
+                  <h4 style="text-align: left;" class="">{{$cloth->harga}}</h4>
+                  <h4  style="text-align: left;">
+                    {!! substr($cloth->content, 0, 100) !!}...
+                  </h4>
+                </div>
               </div>
-              <div class="bottom">
-                <h3 style=" color: #FF7B54;text-align: left; font-weight: bold;padding-left: 25px;">{{$cloth->title}}</h3>
-                <h4 style="text-align: left;" class="">{{$cloth->harga}}</h4>
-                <h4  style="text-align: left;">
-                  {!! substr($cloth->content, 0, 100) !!}...
-                </h4>
-                {{-- <div style="position: relative;">
-                  <a class="fancy" href="{{ route('user.show', $cloth->id) }}" style="position: absolute; top: 100px;bottom: 0; right: 0;">
-                    <span class="top-key"></span>
-                    <span class="text"><p style="font-size: 13px;">Lihat Selengkapnya</p></span>
-                    <span class="bottom-key-1"></span>
-                    <span class="bottom-key-2"></span>
-                  </a>
-                </div> --}}
-              </div>
-            </div>
-          </a>
+            </a>
+          </div>
           @empty
               <div class="alert alert-danger container" style="background: #F55050; color: white; padding: 10px; border-radius: 20px">
                   Stok belum Tersedia.
