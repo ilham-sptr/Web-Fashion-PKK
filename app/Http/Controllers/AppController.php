@@ -32,7 +32,7 @@ class AppController extends Controller
     public function showPengiriman($id, Cloting $clothing, Alamat $pengiriman)
     {
         $clothing = Cloting::where('id', $id)->first();
-        $pengiriman = Cloting::where('id', $id)->first();
+        $pengiriman = Alamat::where('id', $id)->first();
         return view('user.lihat', [
             'clothing'  => $clothing,
             'pengiriman'=> $pengiriman,

@@ -29,7 +29,7 @@
           @forelse ($clothings as $cloth)
           <div class="center-produk" style="display: flex; align-items: center; justify-content: center;">
             <a href="{{ route('user.show', $cloth->id) }}">
-              <div class="col produk-hover" style="background-color: white; height: 500px; width: 350px;">
+              <div class="col" style="background-color: white; height: 500px; width: 350px;">
                 <div class="top">
                   <img src="{{ Storage::url('public/cloth/').$cloth->image }}" alt="" width="360" height="200" />
                 </div>
