@@ -20,6 +20,7 @@ return new class extends Migration
             $table->longText('alamat');
             $table->string('nama_barang');
             $table->string('harga');
+            $table->string('clothing_telepon');
             $table->timestamps();
         });
     }

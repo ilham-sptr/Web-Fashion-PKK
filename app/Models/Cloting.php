@@ -10,6 +10,6 @@ class Cloting extends Model
     use HasFactory;
 
     protected $fillable = [
-        'nama', 'kelas', 'image', 'avatar', 'title', 'content', 'harga', 'email', 'nomor_telepon', 'alamat'
+        'nama', 'kelas', 'image', 'avatar', 'title', 'content', 'harga', 'email', 'nomor_telepon', 'alamat',
     ];
 }

@@ -51,24 +51,28 @@ class AppController extends Controller
 
     public function storePengiriman(Request $request) {
 
+        
         $this->validate($request, [
-            'nama'          => 'required',
-            'email'         => 'required',
-            'kelas'         => 'required',
-            'alamat'        => 'required',
-            'nomor_telepon' => 'required',
-            'nama_barang'   => 'required',
-            'harga'         => 'required'
+            'nama'              => 'required',
+            'email'             => 'required',
+            'kelas'             => 'required',
+            'alamat'            => 'required',
+            'nomor_telepon'     => 'required',
+            'nama_barang'       => 'required',
+            'harga'             => 'required',
+            'clothing_telepon'  => 'required',
         ]);
-
+        
+        // dd($tes);
         $alamat = Alamat::create([
-            'nama'           => $request->nama,
-            'email'          => $request->email,
-            'kelas'          => $request->kelas,
-            'alamat'         => $request->alamat,
-            'nomor_telepon'  => $request->nomor_telepon,
-            'nama_barang'    => $request->nama_barang,
-            'harga'          => $request->harga
+            'nama'              => $request->nama,
+            'email'             => $request->email,
+            'kelas'             => $request->kelas,
+            'alamat'            => $request->alamat,
+            'nomor_telepon'     => $request->nomor_telepon,
+            'nama_barang'       => $request->nama_barang,
+            'harga'             => $request->harga,
+            'clothing_telepon'  => $request->clothing_telepon,
         ]);
 
         if($alamat){

@@ -22,7 +22,7 @@
           <h3 class="fw-bold">Selamat!</h3>
           <p>Anda telah berhasil mengisi data pengiriman.</p>
           <p>Untuk melakukan pembayaran disini.</p>
-          <a href="https://wa.me/62{{ $pengiriman->nomor_telepon }}?text=Halo, Apakah produk {{ $pengiriman->nama_barang }} masih tersedia?" target="_blank" role="button" class="btn btn-success"><i class='bx bxl-whatsapp'></i> Hubungi Kami via WhatsApp</a>
+          <a href="https://wa.me/62{{ $pengiriman->clothing_telepon }}?text=Halo, Apakah produk {{ $pengiriman->nama_barang }} masih tersedia?" target="_blank" role="button" class="btn btn-success"><i class='bx bxl-whatsapp'></i> Hubungi Kami via WhatsApp</a>
           {{-- <a href="#" class="btn btn-primary">Kembali ke Beranda</a> --}}
         </div>
       </div>

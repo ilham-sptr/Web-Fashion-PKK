@@ -32,6 +32,7 @@
                 <div class="mb-3">
                   <label for="nama" class="form-label">Harga</label>
                   <input type="text" class="form-control @error('harga') is-invalid @enderror"  id="harga" placeholder="Masukkan Harga Barang Anda" name="harga" value="{{$clothing->harga}}">
+                  <input type="text" class="form-control"  id="clothing_telepon" name="clothing_telepon" value="{{$clothing->nomor_telepon}}" hidden>
                   @error('harga')
                       <div class="alert alert-danger mt-2">
                           {{ $message }}

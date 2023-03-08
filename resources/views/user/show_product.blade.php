@@ -27,7 +27,7 @@
         <div class="card-body">
           <h1 class="card-title" style="font-weight: bold;">{{$clothing->title}}</h1>
           <h3 class="card-text d-flex mt-0 mb-5" style="color: #205E61;">
-            <i class='bx bxs-dollar-circle align-items-center' style="font-size: 30px; padding-right: 5px; padding-top: 3px;"></i> {{ Akaunting\Money\Money::IDR($clothing->harga) }}
+              {{ Akaunting\Money\Money::IDR($clothing->harga) }}
           </h3>
             <form onsubmit="return confirm('Apakah Anda Yakin Ingin Membeli Ini?');" action="{{ route('user.dibuat', $clothing->id) }}">
               <button type="submit" class="fw-bold btn btn-md btn-success px-3 shadow-btn rounded-pill"><i class='bx bxl-whatsapp'></i> Beli Sekarang</button>
@@ -45,7 +45,7 @@
         <div style="width: 150px; background: #FF7B54; height: 5px; border-radius: 20px; margin-left: 10px; margin-bottom: 20px;"></div>
         <div class="d-flex justify-between mt-3">
           <div class="avatar" style="margin-right: 13px;">
-            <img src="{{ Storage::url('public/cloth/').$clothing->avatar }}" class="rounded-circle" alt="gambar" width="50" height="50">
+            <img src="{{ Storage::url('public/cloth/').$clothing->avatar }}" class="rounded-circle" alt="gambar" width="50" height="50" style="object-fit: cover">
           </div>
           <div>
             <h5 style="font-weight: bold;">{{$clothing->nama}}</h5>
@@ -54,7 +54,7 @@
         </div>
         <div>
           <h6 class="fw-bold">Alamat:</h6>
-          <div style="width: 450px;">
+          <div style="width: 90%;">
             <h6 style="line-height: 25px;"> {!! $clothing->alamat !!}</h6>
           </div>
         </div>
