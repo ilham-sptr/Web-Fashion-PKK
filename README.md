@@ -15,7 +15,7 @@ Technology :
 ## Step by step installation
 #### 1. Clone this repository
 ```
-git clone https://github.com/0x1m4o/Web-Project.git
+git clone https://github.com/MitsukiSaiga/Web-Fashion-PKK.git
 ```
 or 
 #### Download the zip file
@@ -23,7 +23,7 @@ or
 
 #### 2. Go to directory 
 ```
-cd Web-Project
+cd Web-Fashion-PKK
 ```
 
 #### 3. Install dependency with composer
