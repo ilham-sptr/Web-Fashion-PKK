@@ -53,6 +53,3 @@ php artisan serve
 ## Authors
 - [@badzlan](https://github.com/badzlan)
 - [@MitsukiSaiga](https://github.com/MitsukiSaiga)
-- [@ridwanalfarezi](https://github.com/ridwanalfarezi)
-- [@iyanSGN](https://github.com/iyanSGN)
-- [@0x1m4o](https://github.com/0x1m4o)
